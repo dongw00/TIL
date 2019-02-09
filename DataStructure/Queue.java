@@ -18,4 +18,12 @@ public class Queue {
 		for (int i=0; i < size; i++)
 			System.out.print(queue[i] + " ");
 	}
+	
+	public static void main(String[] args) {
+		Queue q = new Queue();
+		q.enQueue(5);
+		q.enQueue(2);
+		
+		q.show();
+	}
 }

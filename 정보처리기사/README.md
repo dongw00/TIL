@@ -20,4 +20,6 @@ SI외 취업하는데 도움이 안된다는 걸로 알고있다. <br>
 
 ## 데이터통신
 
-## [기출문제](https://www.comcbt.com/xe/j4)
+## [필기 기출문제](https://www.comcbt.com/xe/j4)
+
+## [실기 기출문제]()

@@ -20,6 +20,9 @@
 - 자료형
 - 소수
 
-<br >
-
 ## 3. Web Fundamental
+
+
+## ETC
+
+### [정보처리기사](https://github.com/dongw00/Junior-Web-programmer/tree/master/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC)

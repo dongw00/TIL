@@ -1,4 +1,5 @@
 # 정보처리기사
+
 [Q-net](http://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=1320)
 
 SI외 취업하는데 도움이 안된다는 걸로 알고있다. <br>
@@ -10,7 +11,9 @@ SI외 취업하는데 도움이 안된다는 걸로 알고있다. <br>
 
 ## 데이터베이스
 
-- [데이터베이스 - 1]()
+- [DB - 데이터베이스 개요](https://github.com/dongw00/Junior-Web-programmer/tree/master/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A41)
+
+- [DB - 정규화]()
 
 ## 전자계산기 구조
 

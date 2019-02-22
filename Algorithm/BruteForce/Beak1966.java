@@ -1,3 +1,5 @@
+package BruteForce;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 

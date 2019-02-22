@@ -1,3 +1,5 @@
+package BruteForce;
+
 import java.util.Scanner;
 
 public class Beak1476 {

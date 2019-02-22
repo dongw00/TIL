@@ -85,7 +85,7 @@ bool prime(int n) {
 
 `에라토스테네스의 체` : 1부터 N까지 범위 안에 들어있는 모든 소수를 구하려면 에라토스테네스의 체를 쓰면된다.
 
-![](https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4#/media/File:Sieve_of_Eratosthenes_animation.gif)
+![](https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif)
 
 ```java
 /* 100까지의 소수*/

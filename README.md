@@ -18,11 +18,13 @@
 - [최대공약수, 최소공배수](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98)
 - [소수, 에라토스테네스의 체](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EC%86%8C%EC%88%98-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4)
 
-### [완전탐색(Brute-force)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/BruteForce)
+### [완전탐색(Brute-force)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/BruteForce#%EC%99%84%EC%A0%84%ED%83%90%EC%83%89-brute-force)
 
 ### 스택(Stack)
 
 ### 큐(Queue)
+
+## [동적계획법(DP)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/DynamicProgramming#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95dynamic-programming)
 
 ## 3. Web Fundamental
 

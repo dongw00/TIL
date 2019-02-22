@@ -19,7 +19,7 @@
 - [나머지연산](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EB%82%98%EB%A8%B8%EC%A7%80-%EC%97%B0%EC%82%B0)
 - [자료형](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EC%9E%90%EB%A3%8C%ED%98%95)
 - [최대공약수, 최소공배수](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98)
-- [소수](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EC%86%8C%EC%88%98)
+- [소수, 에라토스테네스의 체](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EC%86%8C%EC%88%98)
 
 ## 3. Web Fundamental
 
@@ -28,6 +28,15 @@
 - [URI vs URL vs URN](https://mygumi.tistory.com/139)
 
 ## 4. Security
+
+### Block Chain
+
+- [블록체인 암호학(1) - DES](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(1)-DES>)
+- [블록체인 암호학(2) - AES](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(2)-AES>)
+- [블록체인 암호학(3) - 해시함수](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(3)-%ED%95%B4%EC%8B%9C%ED%95%A8%EC%88%98>)
+- [블록체인 암호학(4) - SHA](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(4)-SHA>)
+
+### 일반 암호학
 
 - [암호화 이것만 알면 된다](https://www.slideshare.net/ssuser800974/ss-76664853)
 - [해시와 암호화 차이점, 사용용도](https://jeong-pro.tistory.com/92)

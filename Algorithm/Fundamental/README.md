@@ -62,9 +62,9 @@ int gcd(int a, int b) {
 
 <br >
 
-## 소수
+## 소수, 에라토스테네스의 체
 
-소수: 약수가 1과 자기자신밖에 없는 수 <br >
+`소수` : 약수가 1과 자기자신밖에 없는 수 <br >
 N이 소수가 되려면, **2보다 크거나 같고**, **root N보다 작거나 같은 자연수로 나누어 떨어지면 안된다.**
 
 ```java
@@ -82,3 +82,25 @@ bool prime(int n) {
 시간복잡도 : O(root N)
 
 - 1978번 [소수 찾기](https://www.acmicpc.net/problem/1978)
+
+`에라토스테네스의 체` : 1부터 N까지 범위 안에 들어있는 모든 소수를 구하려면 에라토스테네스의 체를 쓰면된다.
+
+![](https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4#/media/File:Sieve_of_Eratosthenes_animation.gif)
+
+```java
+/* 100까지의 소수*/
+void eratos() {
+  boolean[] chk = new boolean[101];
+  chk[0] = chk[1] = true;
+  for (int i = 2; i * i <= n; i++) {
+    if (chk[i])
+      continue;
+    for (int j = i + i; j <= n; j += i)
+      chk[j] = true;
+  }
+}
+```
+
+- 1929번 [소수 구하기](https://www.acmicpc.net/problem/1929)
+
+> 안쪽 for문의 j값은 N 범위에 따라 i\*i or i+i로 바꿔준면 된다. (int 범위)

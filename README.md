@@ -24,7 +24,7 @@
 
 ### 큐(Queue)
 
-## [동적계획법(DP)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/DynamicProgramming#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95dynamic-programming)
+### [동적계획법(DP)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/DynamicProgramming#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95dynamic-programming)
 
 ## 3. Web Fundamental
 
@@ -53,3 +53,4 @@
 - [정보처리기사](https://github.com/dongw00/Junior-Web-programmer/tree/master/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC)
 - [질문 잘 하는법(개발자)](https://www.youtube.com/watch?v=L2p1mdpxD5w)
 - [취업할까? 미룰까?](https://jojoldu.tistory.com/398)
+- [그런 RESTAPI로 괜찮은가](http://slides.com/eungjun/rest#/)

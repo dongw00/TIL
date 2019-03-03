@@ -38,7 +38,7 @@
 
 ### Fundamental
 
-- [enum Class]()
+- [enum Class](https://github.com/dongw00/Junior-Web-programmer/tree/master/Java/enum)
 
 ### Advanced
 

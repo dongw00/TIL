@@ -20,6 +20,8 @@
 
 ### [완전탐색(Brute-force)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/BruteForce#%EC%99%84%EC%A0%84%ED%83%90%EC%83%89-brute-force)
 
+- 순열(Permutation)
+
 ### 스택(Stack)
 
 ### 큐(Queue)
@@ -32,7 +34,18 @@
 - [브라우저는 어떻게 동작하는가](https://d2.naver.com/helloworld/59361)
 - [URI vs URL vs URN](https://mygumi.tistory.com/139)
 
-## 4. Security
+## 4. Java
+
+### Fundamental
+
+- [enum Class]()
+
+### Advanced
+
+
+- [Java enum 활용기](http://woowabros.github.io/tools/2017/07/10/java-enum-uses.html)
+
+## 5. Security
 
 ### Block Chain
 

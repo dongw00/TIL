@@ -9,7 +9,7 @@
 
 ## 2. Algorithm
 
-  ### Fundamental
+### Fundamental
 
 - [입출력](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EC%9E%85-%EC%B6%9C%EB%A0%A5)
 - [사칙연산](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/Fundamental#%EC%82%AC%EC%B9%99-%EC%97%B0%EC%82%B0)
@@ -36,8 +36,8 @@
 
 ### Block Chain
 
-- [블록체인 암호학(1) - DES](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(1)-DES>)
-- [블록체인 암호학(2) - AES](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(2)-AES>)
+- [블록체인 암호학(1) - DES](https://developer-mac.tistory.com/52)
+- [블록체인 암호학(2) - AES](https://developer-mac.tistory.com/59)
 - [블록체인 암호학(3) - 해시함수](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(3)-%ED%95%B4%EC%8B%9C%ED%95%A8%EC%88%98>)
 - [블록체인 암호학(4) - SHA](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(4)-SHA>)
 
@@ -50,7 +50,7 @@
 
 ## ETC
 
-- [정보처리기사](https://github.com/dongw00/Junior-Web-programmer/tree/master/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC)
 - [질문 잘 하는법(개발자)](https://www.youtube.com/watch?v=L2p1mdpxD5w)
 - [취업할까? 미룰까?](https://jojoldu.tistory.com/398)
 - [그런 RESTAPI로 괜찮은가](http://slides.com/eungjun/rest#/)
+- [백앤드 개발자를 꿈꾸는 학생들에게](https://d2.naver.com/news/3435170)

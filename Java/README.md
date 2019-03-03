@@ -2,4 +2,7 @@
 
 ## Fundamental
 
+## Advanced
+
 - [enum class](https://github.com/dongw00/Junior-Web-programmer/tree/master/Java/enum)
+- [Builder 패턴](https://github.com/dongw00/Junior-Web-programmer/tree/master/Java/pattern/Builder)

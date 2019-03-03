@@ -42,8 +42,8 @@
 
 ### Advanced
 
-
 - [Java enum 활용기](http://woowabros.github.io/tools/2017/07/10/java-enum-uses.html)
+- [Builder 패턴](https://github.com/dongw00/Junior-Web-programmer/tree/master/Java/pattern/Builder)
 
 ## 5. Security
 

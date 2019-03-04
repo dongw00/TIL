@@ -18,11 +18,11 @@ public class Beak10972 {
 	}
 
 	private static void nextPermutation(int[] arr) {
-		int n = arr.length;
+		int n = arr.length - 1;
 		boolean b = true;
-		Loop1: for (int i = n - 1; i > 0; i--) {
+		Loop1: for (int i = n; i > 0; i--) {
 			if (arr[i - 1] < arr[i]) {
-				for (int j = n - 1; j >= i; j--) {
+				for (int j = n; j >= i; j--) {
 					if (arr[j] > arr[i - 1]) {
 						int temp = arr[j];
 						arr[j] = arr[i - 1];

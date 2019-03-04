@@ -107,3 +107,8 @@ public void previousPermutation(int[] arr) {
 3. 반복
 
 - [모든 순열](https://www.acmicpc.net/problem/10974)
+- [차이를 최대로](https://www.acmicpc.net/problem/10819)
+- [외판원 순회2](https://www.acmicpc.net/problem/2098)
+> 유명한 NP문제이다. 풀이법이 상당히 까다로운데 순열문제를 활용하면 된다. <br>
+
+> 그리고 이 문제는 DFS도 연습할 수 있으므로 2가지 방법으로 풀어보는 것이 좋다.

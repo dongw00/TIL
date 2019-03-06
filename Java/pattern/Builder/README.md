@@ -49,6 +49,7 @@ public class Info {
 
 ex) Info Class의 객체 생성 시 name, age, height의 값들이 세팅되어야 하지만, 컴파일러는 이를 검사할 수 없기때문에 값을 빠트리고 객체를 생성할 수 있다.
 
+
 ### 3. Builder 패턴
 
 이 글에서 핵심적으로 알아볼 패턴이다. 앞에서 소개한 Telescoping Constructor 패턴과 Java Beans 패턴을 결합한 것이 Builder 패턴이다.

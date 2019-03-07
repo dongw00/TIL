@@ -26,7 +26,12 @@
 
 ### 큐(Queue)
 
-### [DFS, BFS]()
+### Graph
+
+- [DFS](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/graph/dfs#dfs-%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89)
+- [BFS]()
+- [Dijkstra](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/graph/dijkstra#%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98dijkstra-algorithm)
+
 
 ### [동적계획법(DP)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/dp#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95dynamic-programming)
 
@@ -64,6 +69,11 @@
 - [해시와 암호화 차이점, 사용용도](https://jeong-pro.tistory.com/92)
 
 ## ETC
+
+### 이력서
+
+- [이력서 작성과 면접에 대한 이야기 - 남궁성 java 카페](https://cafe.naver.com/javachobostudy/125568)
+- [신입취업 조언 1탄 : 포트폴리오 - 남궁성 java 카페](https://cafe.naver.com/javachobostudy/119166)
 
 - [질문 잘 하는법(개발자)](https://www.youtube.com/watch?v=L2p1mdpxD5w)
 - [취업할까? 미룰까?](https://jojoldu.tistory.com/398)

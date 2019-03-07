@@ -71,6 +71,64 @@ class Graph {
 }
 ```
 
+# BFS (너비 우선 검색)
+
+![](https://upload.wikimedia.org/wikipedia/commons/5/5d/Breadth-First-Search-Algorithm.gif)
+
+### 소개
+
+Root Node 혹은 다른 임의의 노드에서 `인접한 노드`를 먼저 탐색하는 방법이다.
+`Queue`를 사용해서 구현한다.
+
+### 시간 복잡도
+
+- 인접 리스트 : O(V + E)
+- 인접 행렬 : O(V^2)
+
+> 접점(V), 간선(E)
+
+```java
+class Graph {
+  private int V;
+  private LinkedList<Integer> adj[];
+
+  Graph(int v) {
+    V = v;
+    adj = new LinkedList[v];
+    for (int i=0; i<v; ++i)
+      adj[i] = new LinkedList();
+  }
+
+  void addEdge(int v, int w) { adj[v].add(w); }
+
+  /* BFS */
+  void BFS(int s) {
+    boolean visited[] = new boolean[V];
+    LinkedList<Integer> queue = new LinkedList<Integer>();
+
+    visited[s] = true;
+    queue.add(s);
+
+    while (queue.size() != 0) {
+      // 방문한 노드를 큐에서 추출(dequeue)하고 값을 출력
+      s = queue.poll();
+      System.out.print(s + " ");
+
+      // 방문한 노드와 인접한 모든 노드를 가져온다.
+      Iterator<Integer> i = adj[s].listIterator();
+      while (i.hasNext()) {
+        int n = i.next();
+        // 방문하지 않은 노드면 방문한 것으로 표시하고 큐에 삽입(enqueue)
+        if (!visited[n]) {
+          visited[n] = true;
+          queue.add(n);
+        }
+      }
+    }
+  }
+}
+```
+
 - [DFS와 BFS](https://www.acmicpc.net/problem/1260)
 - [연결 요소](https://www.acmicpc.net/problem/11724)
 - [이분 그래프](https://www.acmicpc.net/problem/1707)

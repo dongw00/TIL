@@ -61,13 +61,15 @@
 - [블록체인 암호학(3) - 해시함수](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(3)-%ED%95%B4%EC%8B%9C%ED%95%A8%EC%88%98>)
 - [블록체인 암호학(4) - SHA](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(4)-SHA>)
 
-### bitcoin
+### Bitcoin
 
+- [Mastering Bitcoin](https://github.com/bitcoinbook/bitcoinbook)
 - [비트코인이 Merkle Tree를 사용하는 이유](https://dongw00.github.io/Bitcoin-MerkleTree)
 
 ### Ethereum
 
-- [이더리움 프로그래밍 - Real한빛 Web Book](http://www.realhanbit.co.kr/books/25/pages/280/preview)
+- [Mastering Ethereum](https://github.com/ethereumbook/ethereumbook)
+- [이더리움 프로그래밍 - Real한빛 E-book](http://www.realhanbit.co.kr/books/25/pages/280/preview)
 
 ### 일반 암호학
 

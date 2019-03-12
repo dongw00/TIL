@@ -27,9 +27,9 @@ DP는 Optimal Substructure를 만족하기 때문에 작은 문제로 큰 문제
 
 ```java
 int memo[100];
-public int fibonacci(int) {
-    if (n <= 1)
-        return n;
+public int fibonacci(int n) {
+    if (n == 0 || n == 1)
+        return 1;
     else {
         if (memo[n] > 0)
             return memo[n];
@@ -73,5 +73,7 @@ public int fibonacci(int n) {
 ```
 
 - [1로 만들기](https://www.acmicpc.net/problem/1463)
+- [2xn 타일링](https://www.acmicpc.net/problem/11726)
+- [2xn 타일링2](https://www.acmicpc.net/problem/11727)
 
 > [참고자료](https://m.blog.naver.com/PostView.nhn?blogId=occidere&logNo=220787315353&proxyReferer=https%3A%2F%2Fwww.google.com%2F)

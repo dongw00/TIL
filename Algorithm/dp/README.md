@@ -73,7 +73,14 @@ public int fibonacci(int n) {
 ```
 
 - [1로 만들기](https://www.acmicpc.net/problem/1463)
+
+> [참고자료](https://m.blog.naver.com/PostView.nhn?blogId=occidere&logNo=220787315353&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+
 - [2xn 타일링](https://www.acmicpc.net/problem/11726)
 - [2xn 타일링2](https://www.acmicpc.net/problem/11727)
 
-> [참고자료](https://m.blog.naver.com/PostView.nhn?blogId=occidere&logNo=220787315353&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+- [1,2,3 더하기](https://www.acmicpc.net/problem/9095)
+- [1,2,3 더하기3](https://www.acmicpc.net/problem/15988)
+
+- [카드 구매하기](https://www.acmicpc.net/problem/11052)
+- [카드 구매하기2](https://www.acmicpc.net/problem/16194)

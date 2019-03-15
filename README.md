@@ -69,7 +69,7 @@
 ### Ethereum
 
 - [Mastering Ethereum](https://github.com/ethereumbook/ethereumbook)
-- [이더리움 프로그래밍 - Real한빛 E-book](http://www.realhanbit.co.kr/books/25/pages/280/preview)
+- [이더리움 프로그래밍 - Real 한빛 E-book](http://www.realhanbit.co.kr/books/25/pages/280/preview)
 
 ### 일반 암호학
 

@@ -94,3 +94,11 @@ public int fibonacci(int n) {
 <br >
 
 - [쉬운 계단 수](https://www.acmicpc.net/problem/10844)
+- [오르막 수](https://www.acmicpc.net/problem/11057)
+- [이친수](https://www.acmicpc.net/problem/2193)
+- [포도주 시식](https://www.acmicpc.net/problem/2156)
+
+> 마지막 오는 숫자를 케이스로 나눠서 푸는 문제
+
+<br >
+

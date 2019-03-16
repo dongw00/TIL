@@ -2,5 +2,6 @@
 **/.classpath*
 **/.project*
 **/*.class
+**/exam/**
 .idea
 /bin/

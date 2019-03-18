@@ -105,3 +105,6 @@ public int fibonacci(int n) {
 - [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)
 - [가장 긴 증가하는 부분 수열4](https://www.acmicpc.net/problem/14002)
 - [가장 긴 감소하는 부분 수열](https://www.acmicpc.net/problem/11722)
+- [가장 긴 바이토닉 부분 수열](https://www.acmicpc.net/problem/11054)
+- [연속합](https://www.acmicpc.net/problem/1912)
+- [제곱수의 합](https://www.acmicpc.net/problem/1699)

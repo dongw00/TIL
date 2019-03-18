@@ -20,8 +20,6 @@ public class Beak11053 {
 			for (int j = 1; j < i; j++) {
 				if (arr[i] > arr[j] && d[i] <= d[j])
 					d[i] = d[j] + 1;
-				else if (arr[i] == arr[j])
-					d[i] = d[j];
 			}
 		}
 

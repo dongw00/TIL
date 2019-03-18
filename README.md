@@ -35,6 +35,10 @@
 
 ### [다이나믹 프로그래밍(DP)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/dp#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95dynamic-programming)
 
+### 벡터
+
+- 벡터의 외적
+
 ## 3. Web Fundamental
 
 - [REST API 제대로 알고 사용하기](https://meetup.toast.com/posts/92)

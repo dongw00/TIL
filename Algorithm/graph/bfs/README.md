@@ -81,3 +81,7 @@ BFS를 이용해 해결할 수 있는 문제는 3가지 조건을 만족해야�
 
 - [숨바꼭질](https://www.acmicpc.net/problem/1697)
 - [숨바꼭질 2](https://www.acmicpc.net/problem/12851)
+- [숨바꼭질 3](https://www.acmicpc.net/problem/13549)
+- [숨바꼭질 4](https://www.acmicpc.net/problem/13913)
+
+> 2019년 라인 하계 인턴문제에 비슷한 유형이 출제되었다.

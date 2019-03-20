@@ -18,6 +18,13 @@
 - [최대공약수, 최소공배수](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/fundamental#%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98)
 - [소수, 에라토스테네스의 체](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/fundamental#%EC%86%8C%EC%88%98-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4)
 
+## 정렬(Sorting)
+
+- Bubble Sorting
+- Selection Sorting
+- Insertion Sorting
+- Merge Sorting
+
 ### [완전탐색(Brute-force)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/bp#%EC%99%84%EC%A0%84%ED%83%90%EC%83%89-brute-force)
 
 - 순열(Permutation)
@@ -35,7 +42,7 @@
 
 ### [다이나믹 프로그래밍(DP)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/dp#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95dynamic-programming)
 
-### 벡터
+### 분할정복
 
 - 벡터의 외적
 

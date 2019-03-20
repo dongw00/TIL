@@ -5,3 +5,5 @@
 **/exam/**
 .idea
 /bin/
+**/*.out.dSYM/**
+**/*.out

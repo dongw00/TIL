@@ -1,4 +1,4 @@
-package bp.permutation;
+package bp;
 
 import java.util.*;
 

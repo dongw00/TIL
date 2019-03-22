@@ -61,6 +61,8 @@ class Graph {
 - [이분 그래프](https://www.acmicpc.net/problem/1707)
 - [단지번호붙이기](https://www.acmicpc.net/problem/2667)
 - [섬의 개수](https://www.acmicpc.net/problem/4963)
+- [촌수계산](https://www.acmicpc.net/problem/2644)
+- [탈출](https://www.acmicpc.net/problem/16397)
 
 > 위 문제 모두 BFS 기초적인 문제이다.
 

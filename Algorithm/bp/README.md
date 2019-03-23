@@ -14,16 +14,20 @@ BP라고 불리는 `완전탐색`은 단어 그래로 모든 경우의 수를 �
 3. 재귀함수 사용
 4. 비트마스크 사용
 
-- [일곱 난쟁이](https://www.acmicpc.net/problem/2309)
+- 2309번 [일곱 난쟁이](https://www.acmicpc.net/problem/2309)
+
 > 조합을 이용해서 풀면된다.
 
-- [날짜 계산](https://www.acmicpc.net/problem/1476)
+- 1476번 [날짜 계산](https://www.acmicpc.net/problem/1476)
+
 > 나머지를 이용
 
-- [테트로미노](https://www.acmicpc.net/problem/14500)
+- 14500번 [테트로미노](https://www.acmicpc.net/problem/14500)
+
 > 노가다 문제...
 
-- [프린터 큐](https://www.acmicpc.net/problem/1966)
+- 1966번 [프린터 큐](https://www.acmicpc.net/problem/1966)
+
 > 큐 개념도 연습할 수 있다.
 
 ## 순열(Permutation)
@@ -61,7 +65,7 @@ public void nextPermutation(int[] arr) {
 }
 ```
 
-- [다음 순열](https://www.acmicpc.net/problem/10972)
+- 10972번 [다음 순열](https://www.acmicpc.net/problem/10972)
 
 ### 이전 순열 구하기
 
@@ -96,7 +100,7 @@ public void previousPermutation(int[] arr) {
 }
 ```
 
-- [이전 순열](https://www.acmicpc.net/problem/10973)
+- 10973번 [이전 순열](https://www.acmicpc.net/problem/10973)
 
 ### 모든 순열 구하기
 
@@ -106,9 +110,12 @@ public void previousPermutation(int[] arr) {
 2. 다음 순열을 구한다.
 3. 반복
 
-- [모든 순열](https://www.acmicpc.net/problem/10974)
-- [차이를 최대로](https://www.acmicpc.net/problem/10819)
-- [외판원 순회2](https://www.acmicpc.net/problem/2098)
-> 유명한 NP문제이다. 풀이법이 상당히 까다로운데 순열문제를 활용하면 된다. <br>
+- 10974번 [모든 순열](https://www.acmicpc.net/problem/10974)
+- 10819번 [차이를 최대로](https://www.acmicpc.net/problem/10819)
+- 2098번 [외판원 순회2](https://www.acmicpc.net/problem/2098)
+
+> 유명한 NP문제이다. 풀이법이 상당히 까다로운데 순열문제를 활용하면 된다.
+
+<br>
 
 > 그리고 이 문제는 DFS도 연습할 수 있으므로 2가지 방법으로 풀어보는 것이 좋다.

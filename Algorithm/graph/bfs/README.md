@@ -56,13 +56,13 @@ class Graph {
 }
 ```
 
-- [DFS와 BFS](https://www.acmicpc.net/problem/1260)
-- [연결 요소](https://www.acmicpc.net/problem/11724)
-- [이분 그래프](https://www.acmicpc.net/problem/1707)
-- [단지번호붙이기](https://www.acmicpc.net/problem/2667)
-- [섬의 개수](https://www.acmicpc.net/problem/4963)
-- [촌수계산](https://www.acmicpc.net/problem/2644)
-- [탈출](https://www.acmicpc.net/problem/16397)
+- 1260번 [DFS와 BFS](https://www.acmicpc.net/problem/1260)
+- 11724번 [연결 요소](https://www.acmicpc.net/problem/11724)
+- 1707번 [이분 그래프](https://www.acmicpc.net/problem/1707)
+- 2667번 [단지번호붙이기](https://www.acmicpc.net/problem/2667)
+- 4963번 [섬의 개수](https://www.acmicpc.net/problem/4963)
+- 2644번 [촌수계산](https://www.acmicpc.net/problem/2644)
+- 16397번 [탈출](https://www.acmicpc.net/problem/16397)
 
 > 위 문제 모두 BFS 기초적인 문제이다.
 
@@ -76,14 +76,14 @@ BFS를 이용해 해결할 수 있는 문제는 3가지 조건을 만족해야�
 
 ### BFS 문제
 
-- [토마토](https://www.acmicpc.net/problem/7576)
-- [토마토](https://www.acmicpc.net/problem/7569)
+- 7576번 [토마토](https://www.acmicpc.net/problem/7576)
+- 7569번 [토마토](https://www.acmicpc.net/problem/7569)
 
 > 첫 번째 토마토는 높이는 고려하지 않기 때문에 쉬우나 두번째 토마토 문제는 높이를 고려해야하기 때문에 상당히 까다로워진다.
 
-- [숨바꼭질](https://www.acmicpc.net/problem/1697)
-- [숨바꼭질 2](https://www.acmicpc.net/problem/12851)
-- [숨바꼭질 3](https://www.acmicpc.net/problem/13549)
-- [숨바꼭질 4](https://www.acmicpc.net/problem/13913)
+- 1697번 [숨바꼭질](https://www.acmicpc.net/problem/1697)
+- 12851번 [숨바꼭질 2](https://www.acmicpc.net/problem/12851)
+- 13549번 [숨바꼭질 3](https://www.acmicpc.net/problem/13549)
+- 13913번 [숨바꼭질 4](https://www.acmicpc.net/problem/13913)
 
 > 2019년 라인 하계 인턴문제에 비슷한 유형이 출제되었다.

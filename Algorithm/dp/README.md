@@ -72,39 +72,39 @@ public int fibonacci(int n) {
 }
 ```
 
-- [1로 만들기](https://www.acmicpc.net/problem/1463)
+- 1463번 [1로 만들기](https://www.acmicpc.net/problem/1463)
 
 > [참고자료](https://m.blog.naver.com/PostView.nhn?blogId=occidere&logNo=220787315353&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
 
 <br >
 
-- [2xn 타일링](https://www.acmicpc.net/problem/11726)
-- [2xn 타일링2](https://www.acmicpc.net/problem/11727)
+- 11726번 [2xn 타일링](https://www.acmicpc.net/problem/11726)
+- 11727번 [2xn 타일링2](https://www.acmicpc.net/problem/11727)
 
 <br >
 
-- [1,2,3 더하기](https://www.acmicpc.net/problem/9095)
-- [1,2,3 더하기3](https://www.acmicpc.net/problem/15988)
+- 9095번 [1,2,3 더하기](https://www.acmicpc.net/problem/9095)
+- 15988번 [1,2,3 더하기3](https://www.acmicpc.net/problem/15988)
 
 <br >
 
-- [카드 구매하기](https://www.acmicpc.net/problem/11052)
-- [카드 구매하기2](https://www.acmicpc.net/problem/16194)
+- 11052번 [카드 구매하기](https://www.acmicpc.net/problem/11052)
+- 16194번 [카드 구매하기2](https://www.acmicpc.net/problem/16194)
 
 <br >
 
-- [쉬운 계단 수](https://www.acmicpc.net/problem/10844)
-- [오르막 수](https://www.acmicpc.net/problem/11057)
-- [이친수](https://www.acmicpc.net/problem/2193)
-- [포도주 시식](https://www.acmicpc.net/problem/2156)
+- 10844번 [쉬운 계단 수](https://www.acmicpc.net/problem/10844)
+- 11057번 [오르막 수](https://www.acmicpc.net/problem/11057)
+- 2193번 [이친수](https://www.acmicpc.net/problem/2193)
+- 2156번 [포도주 시식](https://www.acmicpc.net/problem/2156)
 
 > 마지막 오는 숫자를 케이스로 나눠서 푸는 문제
 
 <br >
 
-- [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)
-- [가장 긴 증가하는 부분 수열4](https://www.acmicpc.net/problem/14002)
-- [가장 긴 감소하는 부분 수열](https://www.acmicpc.net/problem/11722)
-- [가장 긴 바이토닉 부분 수열](https://www.acmicpc.net/problem/11054)
-- [연속합](https://www.acmicpc.net/problem/1912)
-- [제곱수의 합](https://www.acmicpc.net/problem/1699)
+- 11053번 [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)
+- 14002번 [가장 긴 증가하는 부분 수열4](https://www.acmicpc.net/problem/14002)
+- 11722번 [가장 긴 감소하는 부분 수열](https://www.acmicpc.net/problem/11722)
+- 11054번 [가장 긴 바이토닉 부분 수열](https://www.acmicpc.net/problem/11054)
+- 1912번 [연속합](https://www.acmicpc.net/problem/1912)
+- 1699번 [제곱수의 합](https://www.acmicpc.net/problem/1699)

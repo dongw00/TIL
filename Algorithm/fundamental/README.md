@@ -19,6 +19,7 @@
 - 10953번 [A+B -6](https://www.acmicpc.net/problem/10953)
 - 11021번 [A+B -7](https://www.acmicpc.net/problem/11021)
 - 11022번 [A+B -8](https://www.acmicpc.net/problem/11022)
+- 15552번 [빠른 A+B](https://www.acmicpc.net/problem/15552)
 
 ### 나머지 연산
 

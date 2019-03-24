@@ -108,3 +108,8 @@ public int fibonacci(int n) {
 - 11054번 [가장 긴 바이토닉 부분 수열](https://www.acmicpc.net/problem/11054)
 - 1912번 [연속합](https://www.acmicpc.net/problem/1912)
 - 1699번 [제곱수의 합](https://www.acmicpc.net/problem/1699)
+
+- 2293번 [동전 1](https://www.acmicpc.net/problem/2293)
+- 2294번 [동전 2](https://www.acmicpc.net/problem/2294)
+
+> 동전 2는 DP와 BFS로 풀 수 있는 문제이다. 두 가지 방법으로 풀어보는 것을 추천한다.

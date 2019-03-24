@@ -1,3 +1,5 @@
+package fundamental;
+
 import java.util.Scanner;
 
 public class Beak11654 {

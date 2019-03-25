@@ -25,6 +25,10 @@
 - Insertion Sorting
 - Merge Sorting
 
+### Searching Algorithm
+
+- Binary Saerching
+
 ### [완전탐색(Brute-force)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/bp#%EC%99%84%EC%A0%84%ED%83%90%EC%83%89-brute-force)
 
 - 순열(Permutation)
@@ -42,9 +46,9 @@
 
 ### [다이나믹 프로그래밍(DP)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/dp#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95dynamic-programming)
 
-### 분할정복
+### [분할정복](https://github.com/dongw00/Junior-Web-programmer/blob/master/Algorithm/DivideConquer/README.md#divide-and-conquer-%EB%B6%84%ED%95%A0-%EC%A0%95%EB%B3%B5)
 
-### Greedy Algorithm
+### [Greedy Algorithm](https://github.com/dongw00/Junior-Web-programmer/blob/master/Algorithm/greedy/README.md#greedy-algorithm-%ED%83%90%EC%9A%95-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 
 ## 3. Web Fundamental
 

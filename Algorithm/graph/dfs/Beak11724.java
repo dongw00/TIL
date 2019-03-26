@@ -17,9 +17,8 @@ public class Beak11724 {
 
 		list = new ArrayList[n + 1];
 
-		for (int i = 1; i < n + 1; i++) {
+		for (int i = 1; i < n + 1; i++)
 			list[i] = new ArrayList<Integer>();
-		}
 
 		for (int i = 0; i < m; i++) {
 			int u = sc.nextInt();
@@ -32,7 +31,6 @@ public class Beak11724 {
 		check = new boolean[n + 1];
 
 		/* DFS 방법 */
-		/*
 		for (int i = 1; i < n + 1; i++) {
 			if (!check[i]) {
 				count++;
@@ -41,7 +39,6 @@ public class Beak11724 {
 				}
 			}
 		}
-		*/
 
 		/* BFS 방법 */
 		for (int i = 1; i < n + 1; i++) {

@@ -29,6 +29,8 @@
 
 - Binary Saerching
 
+### Selection Algorithm
+
 ### [완전탐색(Brute-force)](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/bp#%EC%99%84%EC%A0%84%ED%83%90%EC%83%89-brute-force)
 
 - 순열(Permutation)

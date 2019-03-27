@@ -10,3 +10,4 @@
 
 시간 복잡도 : O(n²)
 
+- 1427번 [소트인사이드](https://www.acmicpc.net/problem/1427)

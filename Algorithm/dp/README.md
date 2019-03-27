@@ -28,7 +28,9 @@ DP는 Optimal Substructure를 만족하기 때문에 작은 문제로 큰 문제
 ```java
 int memo[100];
 public int fibonacci(int n) {
-    if (n == 0 || n == 1)
+    if (n <= 1)
+        return n;
+    else if (n == 2)
         return 1;
     else {
         if (memo[n] > 0)
@@ -38,6 +40,11 @@ public int fibonacci(int n) {
     }
 }
 ```
+
+- 2747번 [피보나치 수](https://www.acmicpc.net/problem/2747)
+- 2748번 [피보나치 수 2](https://www.acmicpc.net/problem/2748)
+- 2749번 [피보나치 수 3](https://www.acmicpc.net/problem/2749)
+- 10826번 [피보나치 수 4](https://www.acmicpc.net/problem/10826)
 
 ### 그런데 DP를 풀 때 어떤 방식으로 접근해야하는 가?
 

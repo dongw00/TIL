@@ -37,6 +37,7 @@ public class Beak4963 {
 		Queue<Pairs> queue = new LinkedList<Pairs>();
 		queue.add(new Pairs(x, y));
 		check[x][y] = count;
+		
 		while (!queue.isEmpty()) {
 			Pairs p = queue.remove();
 			x = p.x;

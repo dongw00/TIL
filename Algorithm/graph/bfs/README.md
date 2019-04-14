@@ -63,6 +63,7 @@ class Graph {
 - 4963번 [섬의 개수](https://www.acmicpc.net/problem/4963)
 - 2644번 [촌수계산](https://www.acmicpc.net/problem/2644)
 - 16397번 [탈출](https://www.acmicpc.net/problem/16397)
+- 2468번 [안전 영역](https://www.acmicpc.net/problem/2468)
 
 > 위 문제 모두 BFS 기초적인 문제이다.
 

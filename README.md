@@ -71,27 +71,32 @@
 
 ## 5. Security
 
-### Block Chain 기초
+### 암호학
 
-- [블록체인 암호학(1) - DES](https://developer-mac.tistory.com/52)
-- [블록체인 암호학(2) - AES](https://developer-mac.tistory.com/59)
-- [블록체인 암호학(3) - 해시함수](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(3)-%ED%95%B4%EC%8B%9C%ED%95%A8%EC%88%98>)
-- [블록체인 암호학(4) - SHA](<https://dongw00.github.io/Cryptography-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%95%94%ED%98%B8%ED%95%99(4)-SHA>)
+- [기초 암호학(1) - DES](https://developer-mac.tistory.com/52)
+- [기초 암호학(2) - AES](https://developer-mac.tistory.com/59)
+- [기초 암호학(3) - 공개키 암호(RSA, Diffie-Helmman)](https://developer-mac.tistory.com/76)
+- [기초 암호학(4) - ECC(타원곡선 암호화 알고리즘)](https://developer-mac.tistory.com/83)
+- [모듈 연산(Modular arithmetic](https://developer-mac.tistory.com/84)
+
+- [암호화 이것만 알면 된다](https://www.slideshare.net/ssuser800974/ss-76664853)
 
 ### Bitcoin
 
 - [Mastering Bitcoin](https://github.com/bitcoinbook/bitcoinbook)
-- [비트코인이 Merkle Tree를 사용하는 이유](https://dongw00.github.io/Bitcoin-MerkleTree)
+- [비트코인이 Merkle Tree를 사용하는 이유](https://developer-mac.tistory.com/56)
+- [비트코인 SegWit vs SegWit2x - 세그윗과 세그윗2x](https://developer-mac.tistory.com/82)
 
 ### Ethereum
 
 - [Mastering Ethereum](https://github.com/ethereumbook/ethereumbook)
+- [이더리움 Genesis.json이 무엇인가?](https://developer-mac.tistory.com/42)
+- [이더리움 Geth를 이용해 multi node private network 구성하기](https://developer-mac.tistory.com/44)
 - [이더리움 프로그래밍 - Real 한빛 E-book](http://www.realhanbit.co.kr/books/25/pages/280/preview)
 
-### 일반 암호학
+### Hyperledger
 
-- [암호화 이것만 알면 된다](https://www.slideshare.net/ssuser800974/ss-76664853)
-- [해시와 암호화 차이점, 사용용도](https://jeong-pro.tistory.com/92)
+- [하이퍼레저 패브릭 소개 - Hyperledger Fabric](https://developer-mac.tistory.com/49)
 
 ## ETC
 

@@ -41,7 +41,6 @@ public class Beak2468 {
 					if (arr[nx][ny] > height && check[nx][ny] == 0) {
 						queue.add(new Point(nx, ny));
 						check[nx][ny] = count;
-						// bfs(nx, ny, count, height);
 					}
 				}
 			}

@@ -81,3 +81,7 @@ class Graph {
 - 13565번 [침투](https://www.acmicpc.net/problem/12851)
 
 > 위 문제 모두 DFS와 BFS를 연습할 수 있는 문제다.
+
+- 14502번 [연구소](https://www.acmicpc.net/problem/14502)
+
+> DFS, BFS 두 방법으로 해결할 수 있는 문제이다. 추가적으로  백 트래킹을 이용하면 효율적으로 해결 할 수 있다.

@@ -77,7 +77,7 @@
 - [기초 암호학(2) - AES](https://developer-mac.tistory.com/59)
 - [기초 암호학(3) - 공개키 암호(RSA, Diffie-Helmman)](https://developer-mac.tistory.com/76)
 - [기초 암호학(4) - ECC(타원곡선 암호화 알고리즘)](https://developer-mac.tistory.com/83)
-- [모듈 연산(Modular arithmetic](https://developer-mac.tistory.com/84)
+- [모듈 연산(Modular arithmetic)](https://developer-mac.tistory.com/84)
 
 - [암호화 이것만 알면 된다](https://www.slideshare.net/ssuser800974/ss-76664853)
 
@@ -90,8 +90,8 @@
 ### Ethereum
 
 - [Mastering Ethereum](https://github.com/ethereumbook/ethereumbook)
-- [이더리움 Genesis.json이 무엇인가?](https://developer-mac.tistory.com/42)
-- [이더리움 Geth를 이용해 multi node private network 구성하기](https://developer-mac.tistory.com/44)
+- [Genesis.json이 무엇인가?](https://developer-mac.tistory.com/42)
+- [Geth를 이용해 multi node private network 구성하기](https://developer-mac.tistory.com/44)
 - [이더리움 프로그래밍 - Real 한빛 E-book](http://www.realhanbit.co.kr/books/25/pages/280/preview)
 
 ### Hyperledger

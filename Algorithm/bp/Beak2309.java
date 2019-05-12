@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Beak2309 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 
 		int n = 9;
@@ -14,8 +14,9 @@ public class Beak2309 {
 			dwarf[i] = sc.nextInt();
 			sum += dwarf[i];
 		}
+		
 		sc.close();
-
+		
 		Arrays.sort(dwarf);
 		for (int i = 0; i < n; i++) {
 			for (int j = i + 1; j < n; j++) {

@@ -6,7 +6,7 @@ import java.util.*;
 public class Beak1987 {
 	static char arr[][];
 	static boolean check[];
-	static int ans = 0;
+	static int ans = 1;
 	static int cnt = 1;
 	static int n, m;
 	static int[] dx = { 0, 0, -1, 1 };

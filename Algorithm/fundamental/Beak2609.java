@@ -7,10 +7,16 @@ public class Beak2609 {
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
 		int b = sc.nextInt();
+		
+		if (a < b) {
+			int tmp = b;
+			b = a;
+			a = tmp;
+		}
 
 		int g = gcd(a, b);
 		System.out.println(g);
-		System.out.println(g * (a / g) * (b / g));
+		System.out.println(a * b / result);
 
 		sc.close();
 

@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "CodeLens (Launch) - Beak2805",
+      "request": "launch",
+      "mainClass": "binary_Searching.Beak2805",
+      "projectName": "Web-programmer"
+    },
+    {
       "name": "(lldb) Launch",
       "type": "cppdbg",
       "request": "launch",
@@ -15,15 +22,21 @@
       "environment": [],
       "externalConsole": true,
       "MIMode": "lldb",
-
       "osx": {
         "command": "clang++",
-        "args": ["-Wall", "main.cpp", "-v"],
+        "args": [
+          "-Wall",
+          "main.cpp",
+          "-v"
+        ],
         "isShellCommand": true,
         "showOutput": "always",
         "problemMatcher": {
           "owner": "cpp",
-          "fileLocation": ["relative", "${workspaceRoot}"],
+          "fileLocation": [
+            "relative",
+            "${workspaceRoot}"
+          ],
           "pattern": {
             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
             "file": 1,

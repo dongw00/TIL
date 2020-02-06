@@ -3,7 +3,8 @@ package binarySearch;
 import java.io.*;
 import java.util.*;
 
-public class Beak2805 {
+public class Beak2805_1 {
+
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -11,34 +12,32 @@ public class Beak2805 {
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 
-		int tree[] = new int[n];
+		int arr[] = new int[n];
 
 		st = new StringTokenizer(br.readLine());
-
-		int min = 0;
-		int max = 0;
-
-		int a = tree.length;
 		for (int i = 0; i < n; i++) {
-			tree[i] = Integer.parseInt(st.nextToken());
-			max = Math.max(tree[i], max);
+			arr[i] = Integer.parseInt(st.nextToken());
 		}
 
-		while (min <= max) {
-			int mid = (min + max) / 2;
+		int s = 0, e = 2000000001;
+
+		while (s + 1 < e) {
+			int mid = (s + e) / 2;
+
 			long sum = 0;
 
 			for (int i = 0; i < n; i++) {
-				if (tree[i] > mid)
-					sum += tree[i] - mid;
+				if (arr[i] > mid)
+					sum += arr[i] - mid;
 			}
 
 			if (sum >= m)
-				min = mid + 1;
+				s = mid;
 			else
-				max = mid - 1;
+				e = mid;
 		}
 
-		System.out.println(max);
+		System.out.println(s);
 	}
+
 }

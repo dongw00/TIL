@@ -1,71 +1,57 @@
 package graph.bfs;
 
-import java.util.Iterator;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Beak2644 {
-	static class Pair {
-		int x;
-		int count;
 
-		Pair(int x, int count) {
-			this.x = x;
-			this.count = count;
-		}
-	}
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(br.readLine());
 
-		int n = sc.nextInt();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int from = Integer.parseInt(st.nextToken());
+        int to = Integer.parseInt(st.nextToken());
 
-		int p1 = sc.nextInt();
-		int p2 = sc.nextInt();
+        int m = Integer.parseInt(br.readLine());
 
-		int m = sc.nextInt();
+        int[][] arr = new int[n + 1][n + 1];
+        int[] depth = new int[n + 1];
+        boolean[] visited = new boolean[n + 1];
 
-		LinkedList<Integer> adj[] = new LinkedList[n + 1];
-		boolean[] check = new boolean[n + 1];
+        for (int i = 0; i < m; i++) {
+            st = new StringTokenizer(br.readLine());
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
+            arr[x][y] = 1;
+            arr[y][x] = 1;
+        }
 
-		for (int i = 1; i < n + 1; i++) {
-			adj[i] = new LinkedList();
-		}
+        if (from == to) {
+            System.out.println(0);
+            System.exit(0);
+        }
 
-		for (int i = 0; i < m; i++) {
-			int x = sc.nextInt();
-			int y = sc.nextInt();
-			adj[x].add(y);
-			adj[y].add(x);
-		}
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(from);
+        visited[from] = true;
+        while (!queue.isEmpty()) {
+            int cur = queue.remove();
 
-		Queue<Pair> queue = new LinkedList<Pair>();
-		queue.add(new Pair(p2, 0));
-		check[p2] = true;
+            for (int i = 1; i <= n; i++) {
+                if (arr[cur][i] == 1 && !visited[i]) {
+                    visited[i] = true;
+                    queue.add(i);
+                    depth[i] = depth[cur] + 1;
+                }
+            }
+        }
 
-		while (!queue.isEmpty()) {
-			Pair pair = queue.remove();
-			int x = pair.x;
-			int count = pair.count;
-
-			if (x == p1) {
-				System.out.println(count);
-				System.exit(0);
-			}
-
-			Iterator<Integer> i = adj[x].listIterator();
-			while (i.hasNext()) {
-				int nx = i.next();
-				if (!check[nx]) {
-					queue.add(new Pair(nx, count + 1));
-					check[nx] = true;
-				}
-			}
-		}
-
-		System.out.println(-1);
-
-		sc.close();
-	}
+        System.out.println(depth[to] == 0 ? -1 : depth[to]);
+    }
 }

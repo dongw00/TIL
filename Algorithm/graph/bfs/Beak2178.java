@@ -18,7 +18,6 @@ class Pair {
 
 public class Beak2178 {
 	static int[][] arr;
-	static boolean[][] check;
 	static int[][] dist;
 	static int[] dx = { 0, 0, -1, 1 };
 	static int[] dy = { -1, 1, 0, 0 };
@@ -26,7 +25,6 @@ public class Beak2178 {
 	private static void bfs(int x, int y, int count, int n, int m) {
 		Queue<Pair> queue = new LinkedList<>();
 		queue.add(new Pair(x, y));
-		check[x][y] = true;
 		dist[x][y] = count;
 
 		while (!queue.isEmpty()) {
@@ -37,10 +35,9 @@ public class Beak2178 {
 				int nx = x + dx[i];
 				int ny = y + dy[i];
 				if (0 <= nx && nx < n && 0 <= ny && ny < m) {
-					if (arr[nx][ny] == 1 && !check[nx][ny]) {
+					if (arr[nx][ny] == 1 && dist[nx][ny] == 0) {
 						queue.add(new Pair(nx, ny));
 						dist[nx][ny] = dist[x][y] + 1;
-						check[nx][ny] = true;
 					}
 				}
 			}
@@ -65,7 +62,6 @@ public class Beak2178 {
 		}
 
 		int count = 0;
-		check = new boolean[n][m];
 		dist = new int[n][m];
 
 		bfs(0, 0, ++count, n, m);

@@ -23,7 +23,9 @@ Fn = Fn-1 + Fn-2
 ### 그렇다면 어떻게 해야하는 가?
 
 DP는 Optimal Substructure를 만족하기 때문에 작은 문제로 큰 문제의 정답을 구할 수 있다.
-이때, 작은 문제의 정답을 메모해둔다. (코드에서는 배열로써 구현함)
+이때, 작은 문제의 값을 `Memoization`해둔다.
+
+1. Array 사용
 
 ```java
 int memo[100];
@@ -38,6 +40,27 @@ public int fibonacci(int n) {
         memo[n] = fibonacci(n-1) + fibonacci(n-2);
         return memo[n];
     }
+}
+```
+
+2. HashMap 사용
+```java
+HashMap<Integer, Integer> memo = new HashMap<>();
+
+public int fibonacci(int n) {
+    if (memo.containsKey(n)) {
+        return memo.get(n);
+    }
+
+    int res;
+    if (n < 2) {
+        res = n;
+    } else {
+        res = fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    memo.put(n, res);
+    return res;
 }
 ```
 

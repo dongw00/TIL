@@ -1,4 +1,4 @@
-# 주니어 백엔드 개발자 공부 
+# 주니어 백엔드 개발자 공부
 
 ## 1. DataStructure
 
@@ -61,6 +61,10 @@
 ### Fundamental
 
 - [enum Class](https://github.com/dongw00/Junior-Web-programmer/tree/master/Java/enum)
+
+### 디자인패턴
+
+- [전략 패턴(Strategy pattern)](https://github.com/dongw00/Web-programmer/tree/master/design-pattern#%EC%A0%84%EB%9E%B5strategy-%ED%8C%A8%ED%84%B4)
 
 ### Advanced
 

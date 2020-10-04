@@ -1,4 +1,4 @@
-package DivideConquer;
+package divideConquer;
 
 import java.util.*;
 import java.io.*;

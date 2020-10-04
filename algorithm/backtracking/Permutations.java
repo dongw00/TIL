@@ -1,6 +1,7 @@
 package backtracking;
 
 import java.io.BufferedReader;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public class Permutations {
         return list;
     }
 
-    private void backTract(List<List<Integer>> list, List<Integer> temp, int[] nums) {
+    private void backTrack(List<List<Integer>> list, List<Integer> temp, int[] nums) {
         if (temp.size() == nums.length) {
             list.add(new ArrayList<>(temp));
         } else {
@@ -24,7 +25,7 @@ public class Permutations {
                 if (temp.contains(nums[i]))
                     continue;
                 temp.add(nums[i]);
-                backTract(list, temp, nums);
+                backTrack(list, temp, nums);
                 temp.remove(temp.size() - 1);
             }
         }

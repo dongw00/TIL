@@ -1,37 +1,34 @@
 package dp;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Beak10844 {
-	static final long mod = 1000000000L;
+    static final int mod = 1000000000;
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        long[][] dp = new long[n + 1][10];
 
-		int n = sc.nextInt();
-		long[][] d = new long[n + 1][10];
+        for (int i = 1; i <= 9; i++) {
+            dp[1][i] = 1;
+        }
 
-		for (int i = 1; i <= 9; i++) {
-			d[1][i] = 1;
-		}
+        for (int i = 2; i <= n; i++) {
+            for (int j = 0; j <= 9; j++) {
+                if (j - 1 > 0)
+                    dp[i][j] += dp[i - 1][j - 1];
+                if (j + 1 <= 9)
+                    dp[i][j] += dp[i - 1][j + 1];
+                dp[i][j] %= mod;
+            }
+        }
 
-		for (int i = 2; i <= n; i++) {
-			for (int j = 0; j <= 9; j++) {
-				d[i][j] = 0;
-				if (j - 1 >= 0)
-					d[i][j] += d[i - 1][j - 1];
-				if (j + 1 <= 9)
-					d[i][j] += d[i - 1][j + 1];
-				d[i][j] %= mod;
-			}
-		}
-
-		long ans = 0;
-		for (int i = 0; i <= 9; i++)
-			ans += d[n][i];
-		ans %= mod;
-		System.out.println(ans);
-
-		sc.close();
-	}
+        long ans = 0;
+        for (int i = 0; i <= 9; i++)
+            ans += dp[n][i];
+        System.out.println(ans % mod);
+    }
 }

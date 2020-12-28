@@ -1,33 +1,36 @@
 package dp;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Beak2294 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int k = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int arr[] = new int[n + 1];
-		int d[] = new int[k + 1];
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
-		d[0] = 0;
-		for (int i = 1; i <= k; i++)
-			d[i] = 100001;
+        int[] arr = new int[n];
+        int[] dp = new int[k + 1];
 
-		for (int i = 1; i <= n; i++)
-			arr[i] = sc.nextInt();
-		
-		for (int i = 1; i <= n; i++) {
-			for (int j = arr[i]; j <= k; j++)
-				d[j] = Math.min(d[j], d[j - arr[i]] + 1);
-		}
+        for (int i = 1; i <= k; i++)
+            dp[i] = 100000;
 
-		if (d[k] == 100001)
-			d[k] = -1;
-		
-		System.out.println(d[k]);
+        for (int i = 0; i < n; i++)
+            arr[i] = Integer.parseInt(br.readLine());
 
-		sc.close();
-	}
+        for (int num : arr) {
+            for (int i = num; i <= k; i++) {
+                dp[i] = Math.min(dp[i], dp[i - num] + 1);
+            }
+        }
+
+        if (dp[k] != 100000)
+            System.out.println(dp[k]);
+        else
+            System.out.println(-1);
+    }
 }

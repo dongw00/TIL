@@ -1,29 +1,33 @@
 package dp;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Beak1912 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		int n = sc.nextInt();
-		int[] a = new int[n];
-		int[] d = new int[n];
+        int N = Integer.parseInt(br.readLine());
+        int[] arr = new int[N];
+        int[] dp = new int[N + 1];
 
-		for (int i = 0; i < n; i++)
-			d[i] = a[i] = sc.nextInt();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            dp[i] = arr[i] = Integer.parseInt(st.nextToken());
+        }
 
-		int max = a[0];
+        int max = arr[0];
 
-		for (int i = 1; i < n; i++) {
-			if (a[i] < d[i - 1] + a[i])
-				d[i] = d[i - 1] + a[i];
-			if (max < d[i])
-				max = d[i];
-		}
+        for (int i = 1; i < N; i++) {
+            if (arr[i] < dp[i - 1] + arr[i]) {
+                dp[i] = dp[i - 1] + arr[i];
+            }
+            if (max < dp[i])
+                max = dp[i];
+        }
 
-		System.out.println(max);
-
-		sc.close();
-	}
+        System.out.println(max);
+    }
 }

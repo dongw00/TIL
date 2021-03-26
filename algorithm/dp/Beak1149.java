@@ -1,29 +1,30 @@
 package dp;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Beak1149 {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st;
-		int n = Integer.parseInt(br.readLine());
-		int[][] a = new int[n + 1][3];
-		int[][] d = new int[n + 1][3];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
 
-		for (int i = 1; i <= n; i++) {
-			st = new StringTokenizer(br.readLine());
-			for (int j = 0; j < 3; j++)
-				a[i][j] = Integer.parseInt(st.nextToken());
-		}
-		for (int i = 0; i < 3; i++)
-			d[0][i] = a[0][i] = 0;
+        int[][] arr = new int[N + 1][3];
+        int[][] dp = new int[N + 1][3];
 
-		for (int i = 1; i <= n; i++) {
-			d[i][0] = Math.min(d[i - 1][1], d[i - 1][2]) + a[i][0];
-			d[i][1] = Math.min(d[i - 1][0], d[i - 1][2]) + a[i][1];
-			d[i][2] = Math.min(d[i - 1][0], d[i - 1][1]) + a[i][2];
-		}
-		System.out.println(Math.min(Math.min(d[n][0], d[n][1]), d[n][2]));
-	}
+        for (int i = 1; i <= N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < 3; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        for (int i = 1; i <= N; i++) {
+            dp[i][0] = Math.min(dp[i - 1][1], dp[i - 1][2]) + arr[i][0];
+            dp[i][1] = Math.min(dp[i - 1][0], dp[i - 1][2]) + arr[i][1];
+            dp[i][2] = Math.min(dp[i - 1][0], dp[i - 1][1]) + arr[i][2];
+        }
+        System.out.println(Math.min(dp[N][0], Math.min(dp[N][1], dp[N][2])));
+    }
 }

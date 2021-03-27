@@ -1,24 +1,27 @@
 package dp;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Beak2193 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		int n = sc.nextInt();
+        int n = Integer.parseInt(br.readLine());
+        long[] dp = new long[n + 1];
 
-		long[] d = new long[n + 1];
-		d[1] = 1;
-		
-		if (n >= 2)
-			d[2] = 1;
-		for (int i = 3; i <=n; i++) {
-			d[i] = d[i - 1] + d[i - 2];
-		}
-		
-		System.out.println(d[n]);
+        System.out.println(helper(dp, n));
+    }
 
-		sc.close();
-	}
+    private static long helper(long[] dp, int n) {
+        if (n <= 2)
+            return 1;
+
+        if (dp[n] > 0)
+            return dp[n];
+
+        dp[n] = helper(dp, n - 1) + helper(dp, n - 2);
+        return dp[n];
+    }
 }

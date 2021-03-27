@@ -1,29 +1,22 @@
 package dp;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Beak11726 {
-	static int[] memo;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
 
-	private static int dp(int n) {
-		if (n == 0 || n == 1) {
-			return 1;
-		}
-		if (memo[n] > 0)
-			return memo[n];
-		memo[n] = dp(n - 1) + dp(n - 2);
-		memo[n] %= 10007;
-		return memo[n];
-	}
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        dp[2] = 2;
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
+        for (int i = 3; i <= n; i++) {
+            dp[i] = (dp[i - 1] + dp[i - 2]) % 10007;
+        }
 
-		memo = new int[n + 1];
-		int ans = dp(n) % 10007;
-		System.out.println(ans);
-
-		sc.close();
-	}
+        System.out.println(dp[n]);
+    }
 }

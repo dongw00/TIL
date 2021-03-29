@@ -1,51 +1,64 @@
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 class Test1 {
 
-	public static void main(String[] args) throws Exception {
-		String TOKEN = "Basic eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzbXMiOiJZIiwiYXVkIjoidGJfZ3dfdmlyIiwibW1zIjoiWSIsImV4cCI6MTU3MjQxNTAxMCwicmVwIjoiTiJ9.z0NMjFtuENJP-tTHk_K5ObM5jgfymG8KyOH7Bn4SbBU";
-		String API_URL = "https://test-sms.supersms.co:7020/sms/v3/multiple-destinations";
+    public static void main(String[] args) throws Exception {
+        int N = 3;
+        int[] arr = {5, 2, 2, 5, 3};
 
-		try {
+        Queue<Coffee> queue = new PriorityQueue<>();
 
-			URL url = new URL(API_URL);
+        int idx = 0;
+        List<Integer> ans = new ArrayList<>();
 
-			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        while (idx < arr.length || !queue.isEmpty()) {
+            if (idx < arr.length && queue.size() < N) {
+                queue.add(new Coffee(arr[idx], idx));
+                idx++;
+            } else {
+                int time = 0;
+                while (!queue.isEmpty()) {
+                    Coffee c = queue.remove();
+                    if (time == 0 || c.time <= time) {
+                        time += c.time;
+                        ans.add(c.idx + 1);
+                    } else if (N == 1) {
+                        ans.add(c.idx + 1);
+                        break;
+                    } else {
+                        c.time -= time;
+                        queue.add(c);
+                        break;
+                    }
+                }
+            }
+        }
 
-			con.setDoOutput(true);
-			con.setRequestMethod("POST");
-			con.setRequestProperty("Authorization", TOKEN);
-			con.setRequestProperty("Accept", "application/json");
-			con.setRequestProperty("Content-Type", "application/json");
+        for (int el : ans) {
+            System.out.println(el);
+        }
+    }
 
-			String json = "{\"title\": \"Coding Test\",\"from\": \"0316281564\",\"text\": \"text1\",\"fileKey\": \"710535a7a18647e090b4877f8649898f\",\"destinations\":[{\"to\": \"821029248669\", \"replaceWord1\": \"\", \"replaceWord2\": \"\", \"replaceWord3\":\"\", \"replaceWord4\":\"\", \"replaceWord5\":\"\"}], \"ref\":\"\" ,\"ttl\": \"1000\", \"paymentCode\": \"\", \"clientSubId\":\"\"}";
+    static class Coffee implements Comparable<Coffee> {
+        int time;
+        int idx;
 
-			OutputStream os = con.getOutputStream();
+        public Coffee(int time, int idx) {
+            this.time = time;
+            this.idx = idx;
+        }
 
-			os.write(json.getBytes("UTF-8"));
-			os.flush();
-			os.close();
-
-			int responseCode = con.getResponseCode();
-			System.out.println(responseCode);
-
-			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			String inputLine;
-			StringBuffer response = new StringBuffer();
-
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
-			}
-
-			in.close();
-			System.out.println(response.toString());
-
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-
-	}
-
+        @Override public int compareTo(Coffee o) {
+            if (this.time > o.time)
+                return 1;
+            else if (this.time == o.time) {
+                return Integer.compare(this.idx, o.idx);
+            } else {
+                return -1;
+            }
+        }
+    }
 }

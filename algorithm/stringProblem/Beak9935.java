@@ -13,23 +13,25 @@ public class Beak9935 {
         Stack<Character> stk = new Stack<>();
 
         for (int i = 0; i < str.length(); i++) {
-            stk.push(str.charAt(i));
+             stk.push(str.charAt(i));
 
-            if (stk.size() >= target.length()) {
-                boolean flag = true;
-                for (int j = 0; j < target.length(); j++) {
-                    if (stk.get(stk.size() - target.length() + j) != target.charAt(j)) {
-                        flag = false;
-                        break;
-                    }
-                }
+             if (stk.peek() == target.charAt(target.length() - 1) && stk.size() >= target.length()) {
+                 int idx = target.length() - 2;
+                 boolean flag = false;
 
-                if (flag) {
-                    for (int j = 0; j < target.length(); j++) {
-                        stk.pop();
-                    }
-                }
-            }
+                 for (int j = stk.size() - 2; j >= stk.size() - target.length(); j--) {
+                     if (stk.get(j) != target.charAt(idx--)) {
+                         flag = true;
+                         break;
+                     }
+                 }
+
+                 if (!flag) {
+                     for (int j = 0; j < target.length(); j++) {
+                         stk.pop();
+                     }
+                 }
+             }
         }
 
         StringBuilder sb = new StringBuilder();

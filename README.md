@@ -13,8 +13,8 @@
 - [사칙연산](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/fundamental#%EC%82%AC%EC%B9%99-%EC%97%B0%EC%82%B0)
 - [나머지연산](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/fundamental#%EB%82%98%EB%A8%B8%EC%A7%80-%EC%97%B0%EC%82%B0)
 - [자료형](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/fundamental#%EC%9E%90%EB%A3%8C%ED%98%95)
-- [최대공약수, 최소공배수](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/fundamental#%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98)
-- [소수, 에라토스테네스의 체](https://github.com/dongw00/Junior-Web-programmer/tree/master/Algorithm/fundamental#%EC%86%8C%EC%88%98-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4)
+- [최대공약수, 최소공배수](https://github.com/dongw00/Web-programmer/tree/master/algorithm/fundamental#%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98)
+- [소수, 에라토스테네스의 체](https://github.com/dongw00/Web-programmer/tree/master/algorithm/fundamental#%EC%86%8C%EC%88%98-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4)
 
 ## 정렬(Sorting)
 

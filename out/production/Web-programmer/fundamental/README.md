@@ -57,6 +57,12 @@ int gcd(int a, int b) {
 }
 ```
 
+```java
+int lcm(int a, int b) {
+    return a * b / gcd(a, b);
+}
+```
+
 - 2609번 [최대공약수와 최소공배수](https://www.acmicpc.net/problem/2609)
 - 1934번 [최소공배수](https://www.acmicpc.net/problem/1934)
 - 9613번 [GCD 합](https://www.acmicpc.net/problem/9613)

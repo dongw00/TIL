@@ -3,7 +3,7 @@ package backtracking;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Beak15651 {
+public class Beak15652 {
     static int n, m;
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -21,10 +21,12 @@ public class Beak15651 {
 
     public static void dfs(int[] arr, int cnt) throws IOException {
         if (cnt == m) {
-            for (int i = 0; i < m; i++) {
-                bw.write(arr[i] + " ");
+            if (isOrdered(arr)) {
+                for (int i = 0; i < m; i++) {
+                    bw.write(arr[i] + " ");
+                }
+                bw.newLine();
             }
-            bw.newLine();
             return;
         }
 
@@ -32,5 +34,14 @@ public class Beak15651 {
             arr[cnt] = i;
             dfs(arr, cnt + 1);
         }
+    }
+
+    public static boolean isOrdered(int[] arr) {
+        for (int i = 1; i < m; i++) {
+            if (arr[i - 1] > arr[i])
+                return false;
+        }
+
+        return true;
     }
 }

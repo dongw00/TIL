@@ -6,9 +6,11 @@ import java.util.Map;
 public class B1 {
 
     public static void main(String[] args) {
-        System.out.println(solution(new String[]{"BW", "RY", "BY"}, new int[]{9000, 10000}));
         System.out.println(solution(new String[]{"RG", "WR", "BW", "GG"}, new int[]{5000, 6000}));
         System.out.println(solution(new String[]{"RG", "WR", "BW", "GG"}, new int[]{2000, 6000}));
+        System.out.println(solution(new String[]{"BW", "RY", "BY"}, new int[]{9000, 10000}));
+        System.out.println(solution(new String[]{"YW", "RY", "WG", "BW"}, new int[]{7561, 8945}));
+        System.out.println(solution(new String[]{"BB", "BB", "BB"}, new int[]{1000, 10000}));
     }
 
     public static int solution(String[] colors, int[] prices) {
@@ -27,29 +29,23 @@ public class B1 {
         int ans = 0;
 
         for (char key : topMap.keySet()) {
-            if (bottomMap.getOrDefault(key, 0) > 0) {
-                ans += prices[0];
-                topMap.put(key, topMap.get(key) - 1);
-                bottomMap.put(key, bottomMap.get(key) - 1);
+            int topValue = topMap.get(key);
+            int bottomValue = bottomMap.getOrDefault(key, 0);
+
+            if (bottomValue > 0) {
+                int tmp = Math.min(topValue, bottomValue);
+                ans += tmp * prices[0];
+                topMap.put(key, topMap.get(key) - tmp);
+                bottomMap.put(key, bottomMap.get(key) - tmp);
             }
         }
 
-        int rest = 0;
+        int tmp = 0;
         for (char key : COLOR_LIST) {
-            int a = topMap.getOrDefault(key, 0);
-            int b = bottomMap.getOrDefault(key, 0);
-
-            if (a > 0 || b > 0) {
-                if (a > 0 && b > 0) {
-                    ans += prices[1];
-                } else {
-                    rest++;
-                }
-            }
+            tmp += topMap.getOrDefault(key, 0) + bottomMap.getOrDefault(key, 0);
         }
 
-        ans += Math.min(rest / 2 * prices[1], 2 * prices[0]);
-
+        ans += Math.min(tmp / 2 * prices[1], tmp * prices[0]);
         return ans;
     }
 }

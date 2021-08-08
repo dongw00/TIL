@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Beak1806 {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -20,17 +21,17 @@ public class Beak1806 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        int start = 0, end = 0;
+        int s = 0, e = 0;
         int sum = 0, min = Integer.MAX_VALUE;
-
+        
         while (true) {
             if (sum >= S) {
-                min = Math.min(min, end - start);
-                sum -= arr[start++];
-            } else if (end == N) {
+                min = Math.min(min, e - s);
+                sum -= arr[s++];
+            } else if (e == N) {
                 break;
             } else {
-                sum += arr[end++];
+                sum += arr[e++];
             }
         }
 

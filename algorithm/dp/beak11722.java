@@ -6,16 +6,17 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Beak11053 {
+public class beak11722 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         int n = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
         int[] arr = new int[n];
         int[] dp = new int[n];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
@@ -24,7 +25,7 @@ public class Beak11053 {
 
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < i; j++) {
-                if (arr[j] < arr[i] && dp[i] <= dp[j]) {
+                if (arr[i] < arr[j] && dp[i] <= dp[j]) {
                     dp[i] = dp[j] + 1;
                 }
             }
@@ -32,7 +33,7 @@ public class Beak11053 {
 
         int max = 0;
         for (int el : dp) {
-            max = Math.max(max, el);
+            max = Math.max(el, max);
         }
 
         System.out.println(max);

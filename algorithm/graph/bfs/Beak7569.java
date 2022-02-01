@@ -1,89 +1,86 @@
 package graph.bfs;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
-
-class Three {
-	int x;
-	int y;
-	int z;
-
-	Three(int x, int y, int z) {
-		this.x = x;
-		this.y = y;
-		this.z = z;
-	}
-}
+import java.util.StringTokenizer;
 
 public class Beak7569 {
-	static int[] dx = { -1, 0, 1, 0, 0, 0 };
-	static int[] dy = { 0, 1, 0, -1, 0, 0 };
-	static int[] dz = { 0, 0, 0, 0, -1, 1 };
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int m = sc.nextInt();
-		int n = sc.nextInt();
-		int h = sc.nextInt();
+    static int[] dx = {0, 0, 0, 0, -1, 1};
+    static int[] dy = {0, 0, 1, -1, 0, 0};
+    static int[] dz = {-1, 1, 0, 0, 0, 0};
 
-		Queue<Three> queue = new LinkedList<Three>();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int[][][] arr = new int[h][n][m];
-		int[][][] dist = new int[h][n][m];
+        int m = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+        int h = Integer.parseInt(st.nextToken());
 
-		for (int k = 0; k < h; k++) {
-			for (int i = 0; i < n; i++) {
-				for (int j = 0; j < m; j++) {
-					arr[k][i][j] = sc.nextInt();
-					if (arr[k][i][j] == 1)
-						queue.add(new Three(k, i, j));
-				}
-			}
-		}
+        int[][][] arr = new int[h][n][m];
 
-		while (!queue.isEmpty()) {
-			Three t = queue.remove();
-			int x = t.x;
-			int y = t.y;
-			int z = t.z;
-			for (int i = 0; i < dy.length; i++) {
-				int nx = x + dx[i];
-				int ny = y + dy[i];
-				int nz = z + dz[i];
+        Queue<Pair> queue = new LinkedList<>();
 
-				if (0 <= nx && nx < h && 0 <= ny && ny < n && 0 <= nz && nz < m) {
-					if (arr[nx][ny][nz] == 0 && dist[nx][ny][nz] == 0) {
-						queue.add(new Three(nx, ny, nz));
-						dist[nx][ny][nz] = dist[x][y][z] + 1;
-					}
-				}
-			}
-		}
+        for (int k = 0; k < h; k++) {
+            for (int i = 0; i < n; i++) {
+                st = new StringTokenizer(br.readLine());
+                for (int j = 0; j < m; j++) {
+                    int num = Integer.parseInt(st.nextToken());
+                    arr[k][i][j] = num;
 
-		int ans = 0;
+                    if (num == 1) {
+                        queue.add(new Pair(i, j, k));
+                    }
+                }
+            }
+        }
 
-		for (int k = 0; k < h; k++) {
-			for (int i = 0; i < n; i++) {
-				for (int j = 0; j < m; j++) {
-					if (ans < dist[k][i][j])
-						ans = dist[k][i][j];
-				}
-			}
-		}
+        while (!queue.isEmpty()) {
+            Pair p = queue.remove();
 
-		for (int k = 0; k < h; k++) {
-			for (int i = 0; i < n; i++) {
-				for (int j = 0; j < m; j++) {
-					if (arr[k][i][j] == 0 && dist[k][i][j] == 0) {
-						ans = -1;
-					}
-				}
-			}
-		}
+            for (int i = 0; i < dx.length; i++) {
+                int nx = p.x + dx[i];
+                int ny = p.y + dy[i];
+                int nz = p.z + dz[i];
 
-		System.out.println(ans);
+                if (0 <= nx && nx < n && 0 <= ny && ny < m && 0 <= nz && nz < h) {
+                    if (arr[nz][nx][ny] == 0) {
+                        queue.add(new Pair(nx, ny, nz));
+                        arr[nz][nx][ny] = arr[p.z][p.x][p.y] + 1;
+                    }
+                }
+            }
+        }
 
-		sc.close();
-	}
+        int ans = 0;
+        for (int k = 0; k < h; k++) {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    if (arr[k][i][j] == 0) {
+                        System.out.println(-1);
+                        System.exit(0);
+                    }
+                    ans = Math.max(ans, arr[k][i][j]);
+                }
+            }
+        }
+
+        System.out.println(ans - 1);
+    }
+
+    static class Pair {
+
+        int x, y, z;
+
+        Pair(int x, int y, int z) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+    }
+
 }

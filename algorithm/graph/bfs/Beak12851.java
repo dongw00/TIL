@@ -1,74 +1,72 @@
 package graph.bfs;
 
-import java.util.HashMap;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Beak12851 {
-	static class Pair {
-		int x;
-		int count;
 
-		Pair(int x, int count) {
-			this.x = x;
-			this.count = count;
-		}
-	}
+    static final int MAX = 100000;
 
-	static final int MAX = 100000;
-	static int MIN = Integer.MAX_VALUE;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
-		int n = sc.nextInt();
-		int k = sc.nextInt();
+        boolean[] visited = new boolean[MAX + 1];
 
-		boolean check[] = new boolean[MAX + 1];
+        Queue<Pair> queue = new LinkedList<>();
+        int cnt = 1;
+        int min = Integer.MAX_VALUE;
 
-		if (n == k) {
-			System.out.println(0);
-			System.out.println(1);
-			System.exit(0);
-		}
+        queue.add(new Pair(n, 0));
+        visited[n] = true;
 
-		Queue<Pair> queue = new LinkedList<Pair>();
-		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		queue.add(new Pair(n, 0));
+        while (!queue.isEmpty()) {
+            Pair p = queue.remove();
+            int now = p.x;
+            int time = p.time;
+            visited[now] = true;
 
-		while (!queue.isEmpty()) {
-			Pair now = queue.remove();
-			int x = now.x;
-			int count = now.count;
-			check[x] = true;
-			if (x == k) {
-				if (map.get(count) == null)
-					map.put(count, 1);
-				else
-					map.put(count, map.get(count) + 1);
-				if (MIN > count)
-					MIN = count;
-			}
+            if (now == k) {
+                if (min > time) {
+                    min = time;
+                } else if (min == time) {
+                    cnt++;
+                } else {
+                    continue;
+                }
+            }
 
-			if (x - 1 >= 0 && x <= MAX)
-				if (!check[x - 1])
-					queue.add(new Pair(x - 1, count + 1));
+            if (now - 1 >= 0 && !visited[now - 1]) {
+                queue.add(new Pair(now - 1, time + 1));
+            }
 
-			if (x + 1 <= MAX)
-				if (!check[x + 1])
-					queue.add(new Pair(x + 1, count + 1));
+            if (now + 1 <= MAX && !visited[now + 1]) {
+                queue.add(new Pair(now + 1, time + 1));
+            }
 
-			if (x * 2 <= MAX)
-				if (!check[x * 2])
-					queue.add(new Pair(x * 2, count + 1));
+            if (now * 2 <= MAX && !visited[now * 2]) {
+                queue.add(new Pair(now * 2, time + 1));
+            }
+        }
 
-		}
+        System.out.println(min);
+        System.out.println(cnt);
+    }
 
-		System.out.println(MIN);
-		System.out.println(map.get(MIN));
+    static class Pair {
 
-		sc.close();
-	}
+        int x, time;
+
+        Pair(int x, int time) {
+            this.x = x;
+            this.time = time;
+        }
+    }
 }

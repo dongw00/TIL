@@ -1,52 +1,71 @@
 package graph.bfs;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Beak1697 {
-	static final int MAX = 100000;
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+    static final int MAX = 100000;
 
-		int n = sc.nextInt();
-		int k = sc.nextInt();
-		boolean check[] = new boolean[MAX + 1];
-		int dist[] = new int[MAX + 1];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		Queue<Integer> queue = new LinkedList<Integer>();
-		queue.add(n);
-		check[n] = true;
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
-		while (!queue.isEmpty()) {
-			int now = queue.remove();
-			if (now == k) {
-				System.out.println(dist[now]);
-				break;
-			}
-			if (now - 1 >= 0) {
-				if (!check[now - 1]) {
-					queue.add(now - 1);
-					check[now - 1] = true;
-					dist[now - 1] = dist[now] + 1;
-				}
-			}
-			if (now + 1 <= MAX) {
-				if (!check[now + 1]) {
-					queue.add(now + 1);
-					check[now + 1] = true;
-					dist[now + 1] = dist[now] + 1;
-				}
-			}
-			if (now * 2 <= MAX) {
-				if (!check[now * 2]) {
-					queue.add(now * 2);
-					check[now * 2] = true;
-					dist[now * 2] = dist[now] + 1;
-				}
-			}
-		}
-		sc.close();
-	}
+        boolean[] visited = new boolean[MAX + 1];
+
+        Queue<Pair> queue = new LinkedList<>();
+        queue.add(new Pair(n, 0));
+        visited[n] = true;
+
+        int min = Integer.MAX_VALUE;
+
+        while (!queue.isEmpty()) {
+            Pair p = queue.remove();
+            int now = p.x;
+            int time = p.time;
+
+            if (now == k) {
+                if (min > time) {
+                    min = time;
+                } else {
+                    break;
+                }
+            }
+
+            if (now - 1 >= 0 && !visited[now - 1]) {
+                queue.add(new Pair(now - 1, time + 1));
+                visited[now - 1] = true;
+            }
+
+            if (now + 1 <= MAX && !visited[now + 1]) {
+                queue.add(new Pair(now + 1, time + 1));
+                visited[now + 1] = true;
+            }
+
+            if (now * 2 <= MAX && !visited[now * 2]) {
+                queue.add(new Pair(now * 2, time + 1));
+                visited[now * 2] = true;
+            }
+        }
+
+        System.out.println(min);
+    }
+
+    static class Pair {
+
+        int x, time;
+
+        Pair(int x, int time) {
+            this.x = x;
+            this.time = time;
+        }
+    }
+
 }

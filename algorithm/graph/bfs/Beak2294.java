@@ -1,67 +1,68 @@
 package graph.bfs;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
-import java.awt.Point;
+import java.util.StringTokenizer;
 
 public class Beak2294 {
-	static int[] dx;
-	static int[] arr;
-	static boolean[] check;
-	static int k;
-	static int MIN = Integer.MAX_VALUE;
-	static int MAX = 10000;
-	static Queue<Point> queue;
 
-	private static void bfs(int x, int count) {
-		queue.add(new Point(x, count));
-		check[x] = true;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		while (!queue.isEmpty()) {
-			Point point = queue.remove();
-			x = point.x;
-			count = point.y;
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
-			if (x == 0) {
-				if (MIN > count)
-					MIN = count;
-			}
-			if (MIN < count) {
-				continue;
-			}
-			for (int i = 0; i < dx.length; i++) {
-				int nx = x + dx[i];
-				if (0 <= nx && nx <= k) {
-					if (!check[nx]) {
-						queue.add(new Point(nx, count + 1));
-						check[nx] = true;
-					}
-				}
-			}
-		}
-	}
+        int[] arr = new int[n];
+        boolean[] visited = new boolean[k + 1];
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < n; i++) {
+            arr[i] = -Integer.parseInt(br.readLine());
+        }
 
-		int n = sc.nextInt();
-		k = sc.nextInt();
+        Queue<Pair> queue = new LinkedList<>();
+        queue.add(new Pair(k, 0));
+        visited[k] = true;
 
-		dx = new int[n];
-		check = new boolean[MAX + 1];
-		queue = new LinkedList<Point>();
+        int min = Integer.MAX_VALUE;
+        while (!queue.isEmpty()) {
+            Pair p = queue.remove();
+            int x = p.x;
+            int cnt = p.cnt;
 
-		for (int i = 0; i < n; i++)
-			dx[i] = -(sc.nextInt());
+            if (x == 0) {
+                if (min > cnt) {
+                    min = cnt;
+                }
+            }
 
-		bfs(k, 0);
+            if (min <= cnt) {
+                continue;
+            }
 
-		if (MIN == Integer.MAX_VALUE)
-			System.out.println(-1);
-		else
-			System.out.println(MIN);
+            for (int el : arr) {
+                int nx = x + el;
+                if (0 <= nx && nx <= k && !visited[nx]) {
+                    queue.add(new Pair(nx, cnt + 1));
+                    visited[nx] = true;
+                }
+            }
+        }
 
-		sc.close();
-	}
+        System.out.println(min == Integer.MAX_VALUE ? -1 : min);
+    }
+
+    static class Pair {
+
+        int x, cnt;
+
+        Pair(int x, int cnt) {
+            this.x = x;
+            this.cnt = cnt;
+        }
+    }
+
 }

@@ -1,44 +1,49 @@
 package binarySearch;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Beak2805 {
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int tree[] = new int[n];
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-		st = new StringTokenizer(br.readLine());
+        int[] arr = new int[n];
 
-		int min = 0;
-		int max = 0;
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
 
-		int a = tree.length;
-		for (int i = 0; i < n; i++) {
-			tree[i] = Integer.parseInt(st.nextToken());
-			max = Math.max(tree[i], max);
-		}
+        Arrays.sort(arr);
 
-		while (min <= max) {
-			int mid = (min + max) / 2;
-			long sum = 0;
+        int left = 1, right = 2000000001;
 
-			for (int i = 0; i < n; i++) {
-				if (tree[i] > mid)
-					sum += tree[i] - mid;
-			}
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            long sum = 0;
 
-			if (sum >= m)
-				min = mid + 1;
-			else
-				max = mid - 1;
-		}
+            for (int i = 0; i < n; i++) {
+                if (arr[i] > mid) {
+                    sum += arr[i] - mid;
+                }
+            }
 
-		System.out.println(max);
-	}
+            if (sum >= m) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        System.out.println(right);
+    }
+
 }

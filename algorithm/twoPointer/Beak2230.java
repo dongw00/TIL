@@ -7,15 +7,16 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Beak2230 {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int[] arr = new int[n];
 
-        int[] arr = new int[N];
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
@@ -24,14 +25,17 @@ public class Beak2230 {
         int start = 0, end = 0;
         int min = Integer.MAX_VALUE;
 
-        while (start < N && end < N) {
-            if (arr[end] - arr[start] >= M) {
-                min = Math.min(min, arr[end] - arr[start++]);
+        while (start < n && end < n) {
+            int diff = arr[end] - arr[start];
+            if (diff >= m) {
+                start++;
+                min = Math.min(min, diff);
             } else {
                 end++;
             }
         }
 
-        System.out.println(min != Integer.MAX_VALUE ? min : 0);
+        System.out.println(min == Integer.MAX_VALUE ? 0 : min);
     }
+
 }

@@ -1,52 +1,47 @@
-package Algorithm.backtracking;
+package backtracking;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
 
-/**
- * Beak9663
- */
 public class Beak9663 {
 
-    static int[] col;
-    static int cnt = 0, n;
+    static int n;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         n = Integer.parseInt(br.readLine());
-        col = new int[n + 1];
-
-        for (int i = 1; i <= n; i++) {
-            col[1] = i;
-            nQueen(1);
-        }
-        System.out.println(cnt);
+        System.out.println(backtracking(0, new HashSet<>(), new HashSet<>(), new HashSet<>()));
     }
 
-    public static void nQueen(int row) {
+    public static int backtracking(int row, Set<Integer> diagonals, Set<Integer> antiDiagonals, Set<Integer> cols) {
         if (row == n) {
-            cnt++;
-            return;
+            return 1;
         }
 
-        for (int i = 1; i <= n; i++) {
-            col[row + 1] = i;
-            if (isPossible(row + 1))
-                nQueen(row + 1);
-            else
-                col[row + 1] = 0;
+        int ans = 0;
+        for (int col = 0; col < n; col++) {
+            int curDiagonal = row - col;
+            int curAntiDiagonal = row + col;
+
+            if (cols.contains(col) || diagonals.contains(curDiagonal) || antiDiagonals.contains(curAntiDiagonal)) {
+                continue;
+            }
+
+            cols.add(col);
+            diagonals.add(curDiagonal);
+            antiDiagonals.add(curAntiDiagonal);
+
+            ans += backtracking(row + 1, diagonals, antiDiagonals, cols);
+
+            cols.remove(col);
+            diagonals.remove(curDiagonal);
+            antiDiagonals.remove(curAntiDiagonal);
         }
 
-        col[row] = 0;
-    }
-
-    public static boolean isPossible(int row) {
-        for (int i = 1; i < row; i++) {
-            if (col[i] == col[row])
-                return false;
-            if (Math.abs(i - row) == Math.abs(col[i] - col[row]))
-                return false;
-        }
-        return true;
+        return ans;
     }
 }

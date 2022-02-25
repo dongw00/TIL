@@ -12,26 +12,27 @@ public class Beak15486 {
 
         int n = Integer.parseInt(br.readLine());
 
-        int[] t = new int[n];
-        int[] p = new int[n];
+        int[] t = new int[n + 1];
+        int[] p = new int[n + 1];
+        long[] dp = new long[n + 2];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
 
             t[i] = Integer.parseInt(st.nextToken());
             p[i] = Integer.parseInt(st.nextToken());
         }
 
-        int[] dp = new int[n + 1];
-        for (int i = 0; i < n; i++) {
-            int day = t[i] - 1;
-            int earn = p[i];
+        for (int i = 1; i <= n; i++) {
+            int day = i + t[i];
 
-            if (i + day >= n) {
-                continue;
+            if (day <= n + 1) {
+                dp[day] = Math.max(dp[day], dp[i] + p[i]);
             }
-
+            dp[i + 1] = Math.max(dp[i + 1], dp[i]);
         }
+
+        System.out.println(dp[n + 1]);
     }
 
 }

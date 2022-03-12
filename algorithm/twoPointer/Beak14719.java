@@ -11,7 +11,7 @@ public class Beak14719 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int h = Integer.parseInt(st.nextToken());
+        st.nextToken();
         int w = Integer.parseInt(st.nextToken());
 
         int[] arr = new int[w];

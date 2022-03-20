@@ -1,28 +1,26 @@
 package dp;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Beak11050 {
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int n = Integer.parseInt(st.nextToken());
-		int k = Integer.parseInt(st.nextToken());
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int arr[][] = new int[11][11];
-		arr[1][0] = arr[1][1] = 1;
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
-		for (int i = 2; i <= n; i++) {
-			for (int j = 0; j <= i; j++) {
-				if (i == j || j == 0)
-					arr[i][j] = 1;
-				else
-					arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
-			}
-		}
+        System.out.println(comb(n, k));
+    }
 
-		System.out.println(arr[n][k]);
-	}
+    public static int comb(int n, int k) {
+        if (n == k || k == 0) {
+            return 1;
+        }
+
+        return comb(n - 1, k - 1) + comb(n - 1, k);
+    }
 }

@@ -3,7 +3,6 @@ package binarySearch;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Beak2805 {
@@ -22,9 +21,7 @@ public class Beak2805 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(arr);
-
-        int left = 1, right = 2000000001;
+        int left = 1, right = (int) 2e9;
 
         while (left <= right) {
             int mid = (left + right) / 2;
@@ -45,5 +42,4 @@ public class Beak2805 {
 
         System.out.println(right);
     }
-
 }

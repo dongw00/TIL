@@ -11,7 +11,7 @@ public class Beak1654 {
 		int k = Integer.parseInt(st.nextToken());
 		int n = Integer.parseInt(st.nextToken());
 
-		int arr[] = new int[k];
+		int[] arr = new int[k];
 
 		for (int i = 0; i < k; i++) {
 			arr[i] = Integer.parseInt(br.readLine());
@@ -19,22 +19,23 @@ public class Beak1654 {
 
 		Arrays.sort(arr);
 
-		long s = 1, e = arr[k - 1];
+		long left = 1, right = arr[k - 1];
 
-		while (s <= e) {
-			long mid = (s + e) / 2;
+		while (left < right) {
+			long mid = (left + right) / 2;
 			long cnt = 0;
 
 			for (int i = 0; i < k; i++) {
 				cnt += arr[i] / mid;
 			}
 
-			if (cnt >= n) {
-				s = mid + 1;
+			if (cnt > n) {
+				left = mid;
 			} else {
-				e = mid - 1;
+				right = mid - 1;
 			}
 		}
-		System.out.println(e);
+
+		System.out.println(left);
 	}
 }

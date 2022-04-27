@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Programmers12946 {
+public class Pro12946 {
     static List<int[]> list;
 
     public static void main(String[] args) {

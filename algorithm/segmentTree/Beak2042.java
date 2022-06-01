@@ -1,81 +1,92 @@
 package segmentTree;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Beak2042 {
-	static long arr[];
-	static long tree[];
 
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+    static long[] arr, tree;
 
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
-		int k = Integer.parseInt(st.nextToken());
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		arr = new long[n];
-		tree = new long[n * 4];
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
-		for (int i = 0; i < n; i++) {
-			arr[i] = Long.parseLong(br.readLine());
-		}
+        arr = new long[n];
+        tree = new long[n * 4];
 
-		init(1, 0, n - 1);
+        for (int i = 0; i < n; i++) {
+            arr[i] = Long.parseLong(br.readLine());
+        }
 
-		m += k;
+        init(0, n - 1, 1);
 
-		while (m-- > 0) {
-			st = new StringTokenizer(br.readLine());
-			int get = Integer.parseInt(st.nextToken());
+        m += k;
+        StringBuilder sb = new StringBuilder();
+        while (m-- > 0) {
+            st = new StringTokenizer(br.readLine());
 
-			if (get == 1) {
-				int pos = Integer.parseInt(st.nextToken());
-				long value = Long.parseLong(st.nextToken());
+            int mod = Integer.parseInt(st.nextToken());
 
-				long diff = value - arr[pos - 1];
-				arr[pos - 1] = value;
-				update(1, 0, n - 1, pos - 1, diff);
-			} else {
-				int left = Integer.parseInt(st.nextToken());
-				int right = Integer.parseInt(st.nextToken());
-				System.out.println(sum(1, 0, n - 1, left - 1, right - 1));
-			}
-		}
-	}
+            if (mod == 1) {
+                int idx = Integer.parseInt(st.nextToken()) - 1;
+                long num = Long.parseLong(st.nextToken());
 
-	private static long init(int node, int start, int end) {
-		if (start == end)
-			return tree[node] = arr[start];
+                long diff = num - arr[idx];
+                arr[idx] = num;
+                update(0, n - 1, diff, idx, 1);
+            } else {
+                int start = Integer.parseInt(st.nextToken()) - 1;
+                int end = Integer.parseInt(st.nextToken()) - 1;
+                sb.append(sum(0, n - 1, start, end, 1)).append("\n");
+            }
+        }
 
-		int mid = (start + end) / 2;
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        bw.write(sb.toString());
+        bw.close();
+    }
 
-		return tree[node] = init(node * 2, start, mid) + init(node * 2 + 1, mid + 1, end);
-	}
+    private static long init(int start, int end, int node) {
+        if (start == end) {
+            return tree[node] = arr[start];
+        }
+        int mid = (start + end) / 2;
+        return tree[node] = init(start, mid, node * 2) + init(mid + 1, end, node * 2 + 1);
+    }
 
-	private static void update(int node, int start, int end, int index, long diff) {
-		if (!(start <= index && index <= end))
-			return;
+    private static void update(int start, int end, long diff, int idx, int node) {
+        if (start > idx || end < idx) {
+            return;
+        }
 
-		tree[node] += diff;
+        tree[node] += diff;
 
-		if (start != end) {
-			int mid = (start + end) / 2;
-			update(node * 2, start, mid, index, diff);
-			update(node * 2 + 1, mid + 1, end, index, diff);
-		}
-	}
+        if (start == end) {
+            return;
+        }
+        int mid = (start + end) / 2;
+        update(start, mid, diff, idx, node * 2);
+        update(mid + 1, end, diff, idx, node * 2 + 1);
+    }
 
-	private static long sum(int node, int start, int end, int left, int right) {
-		if (left > end || right < start)
-			return 0;
+    private static long sum(int start, int end, int left, int right, int node) {
+        if (left > end || right < start) {
+            return 0;
+        }
 
-		if (left <= start && end <= right)
-			return tree[node];
+        if (left <= start && end <= right) {
+            return tree[node];
+        }
 
-		int mid = (start + end) / 2;
-		return sum(node * 2, start, mid, left, right) + sum(node * 2 + 1, mid + 1, end, left, right);
-	}
+        int mid = (start + end) / 2;
+        return sum(start, mid, left, right, node * 2) + sum(mid + 1, end, left, right, node * 2 + 1);
+    }
 
 }

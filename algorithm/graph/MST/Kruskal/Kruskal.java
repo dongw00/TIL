@@ -1,83 +1,76 @@
 package graph.MST.Kruskal;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class Kruskal {
-	static class Edge implements Comparable<Edge> {
-		int v1, v2, cost;
 
-		Edge(int v1, int v2, int cost) {
-			this.v1 = v1;
-			this.v2 = v2;
-			this.cost = cost;
-		}
+    static class Edge {
+        int start, end, distance;
 
-		@Override
-		public int compareTo(Edge o) {
-			if (this.cost < o.cost)
-				return -1;
-			else if (this.cost == o.cost)
-				return 0;
-			else
-				return 1;
-		}
+        Edge(int start, int end, int distance) {
+            this.start = start;
+            this.end = end;
+            this.distance = distance;
+        }
+    }
 
-	}
+    private static int getParent(int[] parent, int x) {
+        if (parent[x] == x)
+            return x;
 
-	public static int[] parent;
-	public static ArrayList<Edge> edgeList;
+        return parent[x] = getParent(parent, parent[x]);
+    }
 
-	public static void union(int x, int y) {
-		x = find(x);
-		y = find(y);
-		if (x != y)
-			parent[y] = x;
-	}
+    private static void unionParent(int[] parent, int a, int b) {
+        a = getParent(parent, a);
+        b = getParent(parent, b);
 
-	public static int find(int x) {
-		if (parent[x] == x)
-			return x;
-		return parent[x] = find(parent[x]);
-	}
+        if (a < b) {
+            parent[b] = a;
+        } else {
+            parent[a] = b;
+        }
+    }
 
-	public static boolean isSameParent(int x, int y) {
-		x = find(x);
-		y = find(y);
-		if (x == y)
-			return true;
-		else
-			return false;
-	}
+    private static boolean find(int[] parent, int a, int b) {
+        a = getParent(parent, a);
+        b = getParent(parent, b);
 
-	public static void main(String[] args) {
-		edgeList = new ArrayList<Edge>();
-		edgeList.add(new Edge(1, 4, 4));
-		edgeList.add(new Edge(1, 2, 6));
-		edgeList.add(new Edge(2, 3, 5));
-		edgeList.add(new Edge(2, 4, 3));
-		edgeList.add(new Edge(2, 5, 7));
-		edgeList.add(new Edge(2, 6, 8));
-		edgeList.add(new Edge(3, 6, 8));
-		edgeList.add(new Edge(4, 5, 8));
-		edgeList.add(new Edge(5, 6, 11));
+        return a == b;
+    }
 
-		parent = new int[7];
-		for (int i = 1; i <= 6; i++)
-			parent[i] = i;
+    public static void main(String[] args) {
+        List<Edge> list = new ArrayList<>();
+        list.add(new Edge(1, 7, 12));
+        list.add(new Edge(1, 4, 28));
+        list.add(new Edge(1, 2, 67));
+        list.add(new Edge(1, 5, 17));
+        list.add(new Edge(2, 4, 24));
+        list.add(new Edge(2, 5, 62));
+        list.add(new Edge(3, 5, 20));
+        list.add(new Edge(3, 6, 37));
+        list.add(new Edge(4, 7, 13));
+        list.add(new Edge(5, 6, 45));
+        list.add(new Edge(5, 7, 73));
 
-		Collections.sort(edgeList);
+        list.sort(Comparator.comparingInt(a -> a.distance));
 
-		int sum = 0;
+        int[] parent = new int[8];
+        for (int i = 1; i < parent.length; i++) {
+            parent[i] = i;
+        }
 
-		for (int i = 0; i < edgeList.size(); i++) {
-			Edge edge = edgeList.get(i);
+        int sum = 0;
+        for (Edge edge : list) {
+            if (!find(parent, edge.start, edge.end)) {
+                sum += edge.distance;
+                unionParent(parent, edge.start, edge.end);
+            }
+        }
 
-			if (!isSameParent(edge.v1, edge.v2)) {
-				sum += edge.cost;
-				union(edge.v1, edge.v2);
-			}
-		}
+        System.out.println(sum);
+    }
 
-		System.out.println(sum);
-	}
 }

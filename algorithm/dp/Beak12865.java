@@ -6,28 +6,31 @@ import java.util.StringTokenizer;
 
 public class Beak12865 {
 
+    static int[] W, V;
+    static int N, K;
+    static int[][] dp;
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st.nextToken());
-        int k = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
 
-        Pair[] arr = new Pair[n];
-        int[][] dp = new int[n][k + 1];
+        W = new int[N];
+        V = new int[N];
+        dp = new int[N + 1][K + 1];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
-            int w = Integer.parseInt(st.nextToken());
-            int v = Integer.parseInt(st.nextToken());
-
-            arr[i] = new Pair(w, v);
+            W[i] = Integer.parseInt(st.nextToken());
+            V[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(knapsack(arr, dp, n - 1, k));
+        System.out.println(dp(N - 1, K));
     }
 
-    public static int knapsack(Pair[] arr, int[][] dp, int idx, int k) {
+    private static int dp(int idx, int k) {
         if (idx < 0) {
             return 0;
         }
@@ -36,20 +39,12 @@ public class Beak12865 {
             return dp[idx][k];
         }
 
-        if (arr[idx].weight > k) {
-            dp[idx][k] = knapsack(arr, dp, idx - 1, k);
+        if (W[idx] > k) {
+            dp[idx][k] = dp(idx - 1, k);   // 담지 않는 경우
         } else {
-            dp[idx][k] = Math.max(knapsack(arr, dp, idx - 1, k), knapsack(arr, dp, idx - 1, k - arr[idx].weight) + arr[idx].value);
+            dp[idx][k] = Math.max(dp(idx - 1, k),
+                dp(idx - 1, k - W[idx]) + V[idx]);  // 담은경우
         }
         return dp[idx][k];
-    }
-
-    static class Pair {
-        int weight, value;
-
-        Pair(int weight, int value) {
-            this.weight = weight;
-            this.value = value;
-        }
     }
 }

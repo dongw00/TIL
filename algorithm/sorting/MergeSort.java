@@ -1,44 +1,60 @@
 package sorting;
 
+import java.util.Arrays;
+
 public class MergeSort {
 
-	public static void main(String[] args) {
-		int arr[] = { 10, 5, 3, 9, 2, 4 };
+    public void mergeSort(int[] arr) {
+        mergeSort(arr, 0, arr.length - 1);
+    }
 
-		sort(arr, 0, arr.length - 1);
+    private void mergeSort(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
 
-		for (int a : arr)
-			System.out.print(a + " ");
-	}
+        int mid = (left + right) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
 
-	public static void merge(int arr[], int l, int m, int r) {
-		int i = l, j = m + 1, k = l;
-		int tmp[] = new int[arr.length];
+    private void merge(int[] arr, int left, int mid, int right) {
+        int leftIdx = left;
+        int rightIdx = mid + 1;
+        int sortedIdx = left;
 
-		while (i <= m && j <= r) {
-			if (arr[i] <= arr[j])
-				tmp[k++] = arr[i++];
-			else
-				tmp[k++] = arr[j++];
-		}
+        int[] tmp = new int[right + 1];
 
-		while (i <= m)
-			tmp[k++] = arr[i++];
+        while (leftIdx <= mid && rightIdx <= right) {
+            if (arr[leftIdx] <= arr[rightIdx]) {
+                tmp[sortedIdx++] = arr[leftIdx++];
+            } else {
+                tmp[sortedIdx++] = arr[rightIdx++];
+            }
+        }
 
-		while (j <= r)
-			tmp[k++] = arr[j++];
+        if (leftIdx > mid) {
+            for (int i = rightIdx; i <= right; i++) {
+                tmp[sortedIdx++] = arr[i];
+            }
+        } else {
+            for (int i = leftIdx; i <= mid; i++) {
+                tmp[sortedIdx++] = arr[i];
+            }
+        }
 
-		for (i = l; i <= r; i++)
-			arr[i] = tmp[i];
-	}
+        for (int i = left; i <= right; i++) {
+            arr[i] = tmp[i];
+        }
+    }
 
-	private static void sort(int arr[], int l, int r) {
-		if (l < r) {
-			int m = (l + r) / 2;
+    public static void main(String[] args) {
+        int[] arr = new int[]{10, 100, 40, 30, 29, 49, 2, 1, 0, 5, 1000, 59, 23, 14};
 
-			sort(arr, l, m);
-			sort(arr, m + 1, r);
-			merge(arr, l, m, r);
-		}
-	}
+        MergeSort sort = new MergeSort();
+        sort.mergeSort(arr);
+
+        System.out.println(Arrays.toString(arr));
+    }
 }

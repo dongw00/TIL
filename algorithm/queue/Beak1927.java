@@ -1,17 +1,17 @@
-package priorityqueue;
+package queue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class Beak11279 {
+public class Beak1927 {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
 
         for (int i = 0; i < N; i++) {
             int t = Integer.parseInt(br.readLine());

@@ -7,15 +7,17 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Beak1427 {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		String[] str = br.readLine().split("");
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		Arrays.sort(str, Collections.reverseOrder());
+        String[] str = br.readLine().split("");
 
-		for (int i = 0; i < str.length; i++)
-			System.out.print(str[i].charAt(0) - '0');
-		System.out.println();
-	}
+        Arrays.sort(str, Collections.reverseOrder());
+
+        for (String s : str) {
+            System.out.print(s.charAt(0) - '0');
+        }
+        System.out.println();
+    }
 }

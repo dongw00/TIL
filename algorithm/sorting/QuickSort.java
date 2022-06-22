@@ -1,13 +1,13 @@
-package sorting.quickSort;
+package sorting;
 
 import java.util.Arrays;
 
-public class quickSort {
+public class QuickSort {
 
     public static void main(String[] args) {
         int[] arr = new int[]{8, 7, 2, 1, 0, 9, 6};
 
-        sort(arr, 0, arr.length - 1);
+        quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -37,13 +37,13 @@ public class quickSort {
         arr[b] = tmp;
     }
 
-    public static void sort(int[] arr, int left, int right) {
+    public static void quickSort(int[] arr, int left, int right) {
         if (left >= right) {
             return;
         }
 
         int idx = partition(arr, left, right);
-        sort(arr, left, idx - 1);
-        sort(arr, idx, right);
+        quickSort(arr, left, idx - 1);
+        quickSort(arr, idx, right);
     }
 }

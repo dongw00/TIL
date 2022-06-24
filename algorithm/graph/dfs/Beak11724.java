@@ -1,87 +1,66 @@
 package graph.dfs;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class Beak11724 {
-	static ArrayList<Integer>[] list;
-	static boolean[] check;
-	static int count = 0;
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int m = sc.nextInt();
+    static List<Integer>[] list;
+    static boolean[] visited;
+    static int cnt;
 
-		list = new ArrayList[n + 1];
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		for (int i = 1; i < n + 1; i++)
-			list[i] = new ArrayList<Integer>();
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-		for (int i = 0; i < m; i++) {
-			int u = sc.nextInt();
-			int v = sc.nextInt();
+        visited = new boolean[n + 1];
+        cnt = 0;
 
-			list[u].add(v);
-			list[v].add(u);
-		}
+        list = new ArrayList[n + 1];
+        for (int i = 1; i <= n; i++) {
+            list[i] = new ArrayList<>();
+        }
 
-		check = new boolean[n + 1];
+        for (int i = 0; i < m; i++) {
+            st = new StringTokenizer(br.readLine());
+            int u = Integer.parseInt(st.nextToken());
+            int v = Integer.parseInt(st.nextToken());
 
-		/* DFS 방법 */
-		for (int i = 1; i < n + 1; i++) {
-			if (!check[i]) {
-				count++;
-				for (int j = 0; j < list[i].size(); j++) {
-					dfs(list[i].get(j));
-				}
-			}
-		}
+            list[u].add(v);
+            list[v].add(u);
+        }
 
-		/* BFS 방법 */
-		for (int i = 1; i < n + 1; i++) {
-			if (!check[i]) {
-				count++;
-				for (int j = 0; j < list[i].size(); j++) {
-					bfs(list[i].get(j));
-				}
-			}
-		}
+        for (int i = 1; i <= n; i++) {
+            if (!visited[i]) {
+                dfs(i);
+                cnt++;
+            }
+        }
 
-		System.out.println(count);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        bw.write(cnt + "\n");
+        bw.flush();
+        bw.close();
+    }
 
-		sc.close();
-	}
+    private static void dfs(int idx) {
+        if (visited[idx]) {
+            return;
+        }
 
-	private static void dfs(int x) {
-		if (check[x]) {
-			return;
-		}
-		check[x] = true;
-
-		for (int y : list[x]) {
-			if (!check[y]) {
-				dfs(y);
-			}
-		}
-	}
-
-	private static void bfs(int start) {
-		Queue<Integer> queue = new LinkedList<Integer>();
-		queue.add(start);
-		check[start] = true;
-
-		while (!queue.isEmpty()) {
-			int x = queue.poll();
-			for (int y : list[x]) {
-				if (!check[y]) {
-					check[y] = true;
-					queue.add(y);
-				}
-			}
-		}
-
-	}
+        visited[idx] = true;
+        for (int el : list[idx]) {
+            if (!visited[el]) {
+                dfs(el);
+            }
+        }
+    }
 }

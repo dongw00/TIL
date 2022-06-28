@@ -1,51 +1,55 @@
 package binarySearch;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Beak2343 {
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int arr[] = new int[n];
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-		st = new StringTokenizer(br.readLine());
+        int[] arr = new int[n];
 
-		int sum = 0;
+        st = new StringTokenizer(br.readLine());
 
-		for (int i = 0; i < n; i++)
-			sum += arr[i] = Integer.parseInt(st.nextToken());
+        int left = 0, right = 0;
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+            left = Math.max(arr[i], left);
+            right += arr[i];
+        }
 
-		int min = 0;
-		int max = sum;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
 
-		while (min <= max) {
-			int mid = (min + max) / 2;
+            if (calc(arr, mid) <= m) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
 
-			int idx = 0;
-			int d[] = new int[m];
+        System.out.println(left);
+    }
 
-			for (int i = 0; i < n; i++) {
-				if (d[idx] + arr[i] <= mid)
-					d[idx] += arr[i];
-				else {
-					idx++;
-					i--;
-					if (idx == m)
-						break;
-				}
-			}
+    private static int calc(int[] arr, int mid) {
+        int cnt = 1;
+        int tmp = mid;
 
-			if (idx < m)
-				max = mid - 1;
-			else
-				min = mid + 1;
-		}
+        for (int el : arr) {
+            if (tmp - el < 0) {
+                tmp = mid - el;
+                cnt++;
+            } else {
+                tmp -= el;
+            }
+        }
+        return cnt;
+    }
 
-		System.out.println(min);
-	}
 }

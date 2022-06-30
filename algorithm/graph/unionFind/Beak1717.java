@@ -1,60 +1,71 @@
 package graph.unionFind;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class Beak1717 {
 
-    public static void main(String[] args) throws Exception {
+    static int[] arr;
+
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        int[] parent = new int[n + 1];
+        arr = new int[n + 1];
         for (int i = 1; i <= n; i++) {
-            parent[i] = i;
+            arr[i] = i;
         }
 
-        while (m-- > 0) {
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine());
 
-            int mod = Integer.parseInt(st.nextToken());
+            int action = Integer.parseInt(st.nextToken());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
 
-            if (mod == 0) {
-                unionParent(parent, a, b);
+            if (action == 0) {
+                unionParent(arr, a, b);
             } else {
-                System.out.println(isUnionFind(parent, a, b) ? "YES" : "NO");
+                bw.write(findParent(arr, a, b) ? "YES" : "NO");
+                bw.write("\n");
             }
         }
+        bw.flush();
+        bw.close();
     }
 
-    private static void unionParent(int[] parent, int a, int b) {
-        a = getParent(parent, a);
-        b = getParent(parent, b);
+    private static int getParent(int[] arr, int parent) {
+        if (arr[parent] == parent) {
+            return parent;
+        }
+
+        return arr[parent] = getParent(arr, arr[parent]);
+    }
+
+    private static void unionParent(int[] arr, int a, int b) {
+        a = getParent(arr, a);
+        b = getParent(arr, b);
 
         if (a < b) {
-            parent[b] = a;
+            arr[b] = a;
         } else {
-            parent[a] = b;
+            arr[a] = b;
         }
     }
 
-    private static int getParent(int[] parent, int x) {
-        if (parent[x] == x)
-            return x;
+    private static boolean findParent(int[] arr, int a, int b) {
+        a = getParent(arr, a);
+        b = getParent(arr, b);
 
-        return parent[x] = getParent(parent, parent[x]);
+        return arr[a] == arr[b];
     }
 
-    private static boolean isUnionFind(int[] parent, int a, int b) {
-        a = getParent(parent, a);
-        b = getParent(parent, b);
-
-        return a == b;
-    }
 }

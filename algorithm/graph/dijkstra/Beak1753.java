@@ -1,85 +1,91 @@
 package graph.dijkstra;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
 
 public class Beak1753 {
 
-    static final int INF = Integer.MAX_VALUE;
-    static int V, E, K;
+    static class Pair {
 
-    static List<Node>[] list;
-    static int[] dist;
+        int end, cost;
 
-    static class Node implements Comparable<Node> {
-        int end, weight;
-
-        Node(int end, int weight) {
+        Pair(int end, int cost) {
             this.end = end;
-            this.weight = weight;
-        }
-
-        @Override
-        public int compareTo(Node o) {
-            return Integer.compare(this.weight, o.weight);
+            this.cost = cost;
         }
     }
+
+    static final int INF = 200001;
+    static int v;
+    static int[] cost;
+    static List<Pair>[] list;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        V = Integer.parseInt(st.nextToken());
-        E = Integer.parseInt(st.nextToken());
-        K = Integer.parseInt(br.readLine());
+        v = Integer.parseInt(st.nextToken());
+        int e = Integer.parseInt(st.nextToken());
 
-        list = new ArrayList[V + 1];
-        dist = new int[V + 1];
+        int k = Integer.parseInt(br.readLine());
 
-        Arrays.fill(dist, INF);
-
-        for (int i = 1; i <= V; i++) {
+        list = new ArrayList[v + 1];
+        for (int i = 1; i <= v; i++) {
             list[i] = new ArrayList<>();
         }
 
-        for (int i = 0; i < E; i++) {
+        for (int i = 0; i < e; i++) {
             st = new StringTokenizer(br.readLine());
 
-            int start = Integer.parseInt(st.nextToken());
-            int end = Integer.parseInt(st.nextToken());
-            int weight = Integer.parseInt(st.nextToken());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            int c = Integer.parseInt(st.nextToken());
 
-            list[start].add(new Node(end, weight));
+            list[a].add(new Pair(b, c));
         }
 
-        dijkstra(K);
+        cost = new int[v + 1];
+        Arrays.fill(cost, INF);
 
-        for (int i = 1; i <= V; i++) {
-            System.out.println(dist[i] == INF ? "INF" : dist[i]);
+        dijkstra(k);
+
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        for (int i = 1; i <= v; i++) {
+            bw.write((cost[i] == INF ? "INF" : String.valueOf(cost[i])) + "\n");
         }
+        bw.flush();
+        bw.close();
     }
 
     public static void dijkstra(int start) {
-        PriorityQueue<Node> queue = new PriorityQueue<>();
-        boolean[] check = new boolean[V + 1];
-        queue.add(new Node(start, 0));
-        dist[start] = 0;
+        PriorityQueue<Pair> pq = new PriorityQueue<>(Comparator.comparingInt(o -> o.cost));
+        boolean[] visited = new boolean[v + 1];
+        pq.add(new Pair(start, 0));
+        cost[start] = 0;
 
-        while (!queue.isEmpty()) {
-            Node curNode = queue.remove();
-            int idx = curNode.end;
+        while (!pq.isEmpty()) {
+            Pair p = pq.remove();
 
-            if (check[idx])
+            if (visited[p.end]) {
                 continue;
-            check[idx] = true;
+            }
+            visited[p.end] = true;
 
-            for (Node el : list[idx]) {
-                if (dist[el.end] > dist[idx] + el.weight) {
-                    dist[el.end] = dist[idx] + el.weight;
-                    queue.add(new Node(el.end, dist[el.end]));
+            for (Pair el : list[p.end]) {
+                if (cost[el.end] > cost[p.end] + el.cost) {
+                    cost[el.end] = cost[p.end] + el.cost;
+                    pq.add(new Pair(el.end, cost[el.end]));
                 }
             }
         }
     }
+
 }

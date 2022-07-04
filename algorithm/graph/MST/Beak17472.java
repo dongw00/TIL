@@ -1,4 +1,4 @@
-package graph.bellmanford;
+package graph.MST;
 
 import java.io.BufferedReader;
 import java.io.IOException;

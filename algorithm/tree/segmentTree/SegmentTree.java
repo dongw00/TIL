@@ -1,4 +1,4 @@
-package segmentTree;
+package tree.segmentTree;
 
 public class SegmentTree {
 
@@ -42,16 +42,19 @@ public class SegmentTree {
         }
 
         int mid = (start + end) / 2;
-        return sum(start, mid, node * 2, left, right) + sum(mid + 1, end, node * 2 + 1, left, right);
+        return sum(start, mid, node * 2, left, right) + sum(mid + 1, end, node * 2 + 1, left,
+            right);
     }
 
     public static void update(int start, int end, int node, int idx, int diff) {
-        if (idx < start || idx > end)
+        if (idx < start || idx > end) {
             return;
+        }
 
         tree[node] += diff;
-        if (start == end)
+        if (start == end) {
             return;
+        }
 
         int mid = (start + end) / 2;
         update(start, mid, node * 2, idx, diff);

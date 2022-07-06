@@ -1,12 +1,14 @@
-package devMatching2021;
+package devmatching.p2021;
 
 import java.util.Arrays;
 
 public class B2 {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(6, 6, new int[][]{{2, 2, 5, 4}, {3, 3, 6, 6}, {5, 1, 6, 3}})));
-        System.out.println(Arrays.toString(solution(3, 3, new int[][]{{1, 1, 2, 2}, {1, 2, 2, 3}, {2, 1, 3, 2}, {2, 2, 3, 3}})));
+        System.out.println(
+            Arrays.toString(solution(6, 6, new int[][]{{2, 2, 5, 4}, {3, 3, 6, 6}, {5, 1, 6, 3}})));
+        System.out.println(Arrays.toString(
+            solution(3, 3, new int[][]{{1, 1, 2, 2}, {1, 2, 2, 3}, {2, 1, 3, 2}, {2, 2, 3, 3}})));
         System.out.println(Arrays.toString(solution(100, 97, new int[][]{{1, 1, 100, 97}})));
     }
 

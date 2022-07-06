@@ -1,4 +1,4 @@
-package segmentTree;
+package tree.segmentTree;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -86,7 +86,8 @@ public class Beak2042 {
         }
 
         int mid = (start + end) / 2;
-        return sum(start, mid, left, right, node * 2) + sum(mid + 1, end, left, right, node * 2 + 1);
+        return sum(start, mid, left, right, node * 2) + sum(mid + 1, end, left, right,
+            node * 2 + 1);
     }
 
 }

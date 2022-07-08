@@ -8,40 +8,43 @@ public class Beak10844 {
 
     static final int MOD = 1000000000;
 
+    static int[][] dp;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        long[][] dp = new long[n + 1][10];
+
+        dp = new int[n + 1][10];
 
         for (int i = 1; i < 10; i++) {
             dp[1][i] = 1;
         }
 
-        long ans = 0;
-        for (int i = 1; i < 10; i++) {
-            ans += dp(dp, n, i);
+        for (int i = 0; i < 10; i++) {
+            dp(n, i);
         }
 
-        System.out.println(ans % MOD);
+        int sum = 0;
+        for (int i = 0; i < 10; i++) {
+            sum = (sum + dp[n][i]) % MOD;
+        }
+        System.out.println(sum);
     }
 
-    public static long dp(long[][] dp, int digit, int val) {
-        if (digit == 1) {
-            return 1;
+    public static int dp(int n, int m) {
+        if (n == 0) {
+            return 0;
+        }
+        if (dp[n][m] > 0) {
+            return dp[n][m];
         }
 
-        if (dp[digit][val] > 0) {
-            return dp[digit][val];
-        }
-
-        if (val == 0) {
-            dp[digit][val] = dp(dp, digit - 1, 1) % MOD;
-        } else if (val == 9) {
-            dp[digit][val] = dp(dp, digit - 1, 8) % MOD;
+        if (m == 0) {
+            return dp[n][m] = dp(n - 1, 1);
+        } else if (m == 9) {
+            return dp[n][m] = dp(n - 1, 8);
         } else {
-            dp[digit][val] = (dp(dp, digit - 1, val - 1) + dp(dp, digit - 1, val + 1)) % MOD;
+            return dp[n][m] = (dp(n - 1, m - 1) + dp(n - 1, m + 1)) % MOD;
         }
-        return dp[digit][val];
     }
 }

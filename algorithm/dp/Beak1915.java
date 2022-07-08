@@ -1,43 +1,41 @@
 package dp;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Beak1915 {
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        int[][] arr = new int[n][m];
-
+        int[][] dp = new int[n][m];
+        int max = 0;
         for (int i = 0; i < n; i++) {
-            String[] str = br.readLine().split("");
+            char[] tmp = br.readLine().toCharArray();
             for (int j = 0; j < m; j++) {
-                arr[i][j] = Integer.parseInt(str[j]);
-            }
-        }
+                dp[i][j] = tmp[j] - '0';
 
-        if (n < 2 || m < 2) {
-            System.out.println(1);
-            System.exit(0);
-        }
-
-        int ans = 0;
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < m; j++) {
-                if (arr[i][j] == 1) {
-                    arr[i][j] =
-                        Math.min(arr[i - 1][j], Math.min(arr[i][j - 1], arr[i - 1][j - 1])) + 1;
-                    ans = Math.max(ans, arr[i][j]);
+                if (dp[i][j] == 0) {
+                    continue;
                 }
+
+                if (i == 0 || j == 0) {
+                    max = Math.max(max, dp[i][j]);
+                    continue;
+                }
+
+                dp[i][j] =
+                    Math.min(dp[i - 1][j - 1], Math.min(dp[i][j - 1], dp[i - 1][j])) + 1;
+
+                max = Math.max(max, dp[i][j]);
             }
         }
 
-        System.out.println(ans * ans);
+        System.out.println((long) max * max);
     }
 }
